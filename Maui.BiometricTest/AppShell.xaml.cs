@@ -2,7 +2,7 @@
 {
     public partial class AppShell : Shell
     {
-        public AppShell(MainPage page)
+        public AppShell()
         {
             InitializeComponent();
         }
