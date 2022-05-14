@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +26,29 @@ namespace Wpf.FontTest
         public MainWindow()
         {
             InitializeComponent();
+
+            GetFontList();
+        }
+
+        private static void GetFontList()
+        {
+            //CultureInfo oldCulture = Thread.CurrentThread.CurrentUICulture;
+
+            try
+            {
+                //Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfoByIetfLanguageTag("en-US");
+                //InstalledFontCollection installedFontCollection = new InstalledFontCollection();
+
+                List<string> fontList = new List<string>();
+                foreach (FontFamily font in Fonts.SystemFontFamilies)
+                {
+                    fontList.Add(string.Join(",",font.FamilyNames.Values));
+                }
+            }
+            finally
+            {
+                //Thread.CurrentThread.CurrentUICulture = oldCulture;
+            }
         }
     }
 }

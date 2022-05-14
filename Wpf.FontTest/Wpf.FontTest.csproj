@@ -8,9 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Resource Include="Fonts\NotoSans-Bold.ttf" />
-    <Resource Include="Fonts\NotoSans-Medium.ttf" />
-    <Resource Include="Fonts\NotoSans-Regular.ttf" />
+    <None Remove="Fonts\Donoun Medium.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Donoun Medium.ttf">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
