@@ -1,20 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Text;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Wpf.FontTest
 {
@@ -27,27 +14,19 @@ namespace Wpf.FontTest
         {
             InitializeComponent();
 
-            GetFontList();
+            FontList();
         }
 
-        private static void GetFontList()
+        /// <summary>
+        /// 설치된 글꼴 명칭 확인
+        /// </summary>
+        private void FontList()
         {
-            //CultureInfo oldCulture = Thread.CurrentThread.CurrentUICulture;
-
-            try
+            List<string> fontList = new List<string>();
+            foreach (FontFamily font in Fonts.SystemFontFamilies)
             {
-                //Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfoByIetfLanguageTag("en-US");
-                //InstalledFontCollection installedFontCollection = new InstalledFontCollection();
-
-                List<string> fontList = new List<string>();
-                foreach (FontFamily font in Fonts.SystemFontFamilies)
-                {
-                    fontList.Add(string.Join(",",font.FamilyNames.Values));
-                }
-            }
-            finally
-            {
-                //Thread.CurrentThread.CurrentUICulture = oldCulture;
+                fontList.Add(string.Join(",", font.FamilyNames.Values));
+                Debug.WriteLine(string.Join(",", font.FamilyNames.Values));
             }
         }
     }

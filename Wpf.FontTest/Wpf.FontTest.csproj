@@ -9,12 +9,14 @@
 
   <ItemGroup>
     <None Remove="Fonts\Donoun Medium.ttf" />
+    <None Remove="Fonts\NotoSansCJKkr-Regular.otf" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Fonts\Donoun Medium.ttf">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Fonts\NotoSansCJKkr-Regular.otf" />
   </ItemGroup>
 
 </Project>

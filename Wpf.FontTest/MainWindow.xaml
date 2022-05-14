@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
-        <Label  Content="다람쥐 헌 쳇바퀴에 타고파. 폰트 적용 예제 (Label)" FontSize="25" />
-        <TextBlock Text="다람쥐 헌 쳇바퀴에 타고파. 폰트 적용 예제 (TextBlock)" FontSize="25" />
-        <TextBox   Text="다람쥐 헌 쳇바퀴에 타고파. 폰트 적용 예제 (TextBox)" FontSize="25" />
+        <Label  Content="다람쥐 헌 쳇바퀴에 타고파. 폰트 적용 예제(Donoun - 전체적용)" FontSize="25" />
+        <TextBlock Text="다람쥐 헌 쳇바퀴에 타고파. 폰트 적용 예제(Noto Sans)" FontSize="25" FontFamily="/Wpf.FontTest;component/Fonts/#Noto Sans CJK KR"/>
+        <TextBox   Text="다람쥐 헌 쳇바퀴에 타고파. 폰트 적용 예제(고딕)" FontSize="25" FontFamily="고딕"/>
+        <Label  Content="다람쥐 헌 쳇바퀴에 타고파. 폰트 적용 예제(Donoun - 전체적용)" FontSize="25" />
     </StackPanel>
 </Window>

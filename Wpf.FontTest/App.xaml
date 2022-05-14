@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:Wpf.FontTest"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <FontFamily x:Key="NotoSans">applicaton:,,,/Fonts/#Noto Sans</FontFamily>
-        <FontFamily x:Key="Donoun">applicaton:,,,/Fonts/#Dounon</FontFamily>
+
     </Application.Resources>
 </Application>
