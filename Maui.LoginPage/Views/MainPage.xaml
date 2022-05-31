@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.LoginPage.Views.MainPage" 
+             BackgroundColor="#285083">
+    
+    <StackLayout>
+        <Image Source="dotnet_bot.png" WidthRequest="150" Aspect="Center" Margin="30" >
+            <Image.Shadow>
+                <Shadow Brush="White"
+                Offset="10,10"
+                Radius="10"
+                Opacity="0.7" />
+            </Image.Shadow>
+        </Image>
+        <Label Text="Main" TextColor="White" HorizontalOptions="Center"/>
+    </StackLayout>
+</ContentPage>

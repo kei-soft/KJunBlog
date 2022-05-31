@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.BiometricTest", "Maui.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf.FontTest", "Wpf.FontTest\Wpf.FontTest.csproj", "{110634EC-DB5F-4F64-AFF7-7E1C8096BE0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.PopupTest", "Maui.PopupTest\Maui.PopupTest.csproj", "{24561F95-42C6-431B-9C05-0C09A2C24BFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.PopupTest", "Maui.PopupTest\Maui.PopupTest.csproj", "{24561F95-42C6-431B-9C05-0C09A2C24BFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.LoginPage", "Maui.LoginPage\Maui.LoginPage.csproj", "{BD1FAFEF-6939-4453-A200-6AD41113F20F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,12 @@ Global
 		{24561F95-42C6-431B-9C05-0C09A2C24BFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24561F95-42C6-431B-9C05-0C09A2C24BFB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{24561F95-42C6-431B-9C05-0C09A2C24BFB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BD1FAFEF-6939-4453-A200-6AD41113F20F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1FAFEF-6939-4453-A200-6AD41113F20F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1FAFEF-6939-4453-A200-6AD41113F20F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BD1FAFEF-6939-4453-A200-6AD41113F20F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1FAFEF-6939-4453-A200-6AD41113F20F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD1FAFEF-6939-4453-A200-6AD41113F20F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

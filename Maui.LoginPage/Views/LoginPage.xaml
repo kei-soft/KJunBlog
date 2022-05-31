@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.LoginPage.Views.LoginPage" 
+             BackgroundColor="#376199">
+    
+    <Shell.TabBarIsVisible>false</Shell.TabBarIsVisible>
+    <Shell.NavBarIsVisible>false</Shell.NavBarIsVisible>
+    
+    <StackLayout BackgroundColor="#285083">
+
+        <Frame BackgroundColor="Transparent" BorderColor="Transparent" Margin="40">
+            <StackLayout>
+                <Label LineBreakMode="WordWrap" HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="L" TextColor="White" FontAttributes="Bold"  FontSize="50"/>
+                            <Span Text="ogin" FontSize="25" TextColor="LightGray"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label LineBreakMode="WordWrap" HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Pag" FontSize="25" TextColor="LightGray"/>
+                            <Span Text="E" TextColor="White" FontAttributes="Bold"  FontSize="50"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </Frame>
+        
+        <Frame BorderColor="#376199" Margin="20,10" Padding="0" BackgroundColor="#376199">
+            <StackLayout BackgroundColor="#376199" VerticalOptions="Center">
+
+                <Frame Margin="15" Padding="0" BackgroundColor="#376199" CornerRadius="10" BorderColor="White" HeightRequest="45">
+                    <Entry Background="#376199" Margin="10,1" Placeholder="Id" PlaceholderColor="LightGray" VerticalOptions="Center" TextColor="White"/>
+                </Frame>
+
+                <Frame Margin="15" Padding="0" BackgroundColor="#376199" CornerRadius="10" BorderColor="White" HeightRequest="45">
+                    <Entry Background="#376199" Margin="10,1" Placeholder="Password" PlaceholderColor="LightGray" VerticalOptions="Center" TextColor="White" IsPassword="True" MaxLength="10"/>
+                </Frame>
+
+                <Button Text="LOGIN" TextColor="White" FontSize="15" BackgroundColor="#1295DB" HorizontalOptions="FillAndExpand" Margin="15,15" HeightRequest="40" FontAttributes="Bold"
+                        Command="{Binding MenuCommand}" CommandParameter="MainPage">
+                    
+                </Button>
+            </StackLayout>
+        </Frame>
+        <Label Text="Create acount?" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuCommand}" CommandParameter="MainPage"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+    </StackLayout>
+</ContentPage>

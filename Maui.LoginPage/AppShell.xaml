@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Maui.LoginPage.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Maui.LoginPage.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <Shell.Resources>
+        <Style x:Key="BaseStyle" TargetType="Element">
+            <Setter Property="Shell.NavBarHasShadow" Value="False"/>
+            <Setter Property="Shell.BackgroundColor" Value="#285083" />
+            <Setter Property="Shell.ForegroundColor" Value="White" />
+            <Setter Property="Shell.TitleColor" Value="White" />
+            <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor" Value="Gray" />
+            <Setter Property="Shell.NavBarIsVisible" Value="True" />
+            <Setter Property="Shell.TabBarIsVisible" Value="True" />
+
+            <Setter Property="Shell.TabBarBackgroundColor" Value="#376199" />
+            <Setter Property="Shell.TabBarForegroundColor" Value="White" />
+            <Setter Property="Shell.TabBarTitleColor" Value="White" />
+            <Setter Property="Shell.TabBarDisabledColor" Value="Black" />
+            <Setter Property="Shell.TabBarUnselectedColor" Value="Gray" />
+        </Style>
+        
+        <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+        <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
+    </Shell.Resources>
+
+    <ShellContent
+        Title="Login"        
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="LoginPage" />
+
+    <FlyoutItem 
+        Title="App" 
+        Route="App" 
+        FlyoutDisplayOptions="AsMultipleItems">
+        
+        <ShellContent
+            Title="Main"
+            Icon="dotnet_bot.png"
+            Style="{StaticResource BaseStyle}"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        
+        <ShellContent
+            Title="About"
+            Icon="kei.png"
+            Style="{StaticResource BaseStyle}"
+            ContentTemplate="{DataTemplate local:AboutPage}"
+            Route="AboutPage" />
+
+    </FlyoutItem>
+</Shell>
