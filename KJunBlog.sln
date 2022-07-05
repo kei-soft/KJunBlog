@@ -15,6 +15,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerilogTest", "SerilogTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.DevGridTest", "Wpf.DevGridTest\Wpf.DevGridTest.csproj", "{96625E2F-4D4C-467B-ABEF-06923D594AAF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.ImageTest", "Maui.ImageTest\Maui.ImageTest.csproj", "{ADD1B557-648A-4C19-B9DE-8E498C66CDA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win.TeeChartLegendClickTest", "Win.TeeChartLegendClickTest\Win.TeeChartLegendClickTest.csproj", "{AF23E9A4-4790-42BA-86EA-24587B727588}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.ListViewSelectItemTest", "Wpf.ListViewSelectItemTest\Wpf.ListViewSelectItemTest.csproj", "{2A754728-4DB8-4F64-A1BC-A4C1BCF9DD47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +57,20 @@ Global
 		{96625E2F-4D4C-467B-ABEF-06923D594AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96625E2F-4D4C-467B-ABEF-06923D594AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96625E2F-4D4C-467B-ABEF-06923D594AAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD1B557-648A-4C19-B9DE-8E498C66CDA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD1B557-648A-4C19-B9DE-8E498C66CDA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD1B557-648A-4C19-B9DE-8E498C66CDA5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{ADD1B557-648A-4C19-B9DE-8E498C66CDA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD1B557-648A-4C19-B9DE-8E498C66CDA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD1B557-648A-4C19-B9DE-8E498C66CDA5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AF23E9A4-4790-42BA-86EA-24587B727588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF23E9A4-4790-42BA-86EA-24587B727588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF23E9A4-4790-42BA-86EA-24587B727588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF23E9A4-4790-42BA-86EA-24587B727588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A754728-4DB8-4F64-A1BC-A4C1BCF9DD47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A754728-4DB8-4F64-A1BC-A4C1BCF9DD47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A754728-4DB8-4F64-A1BC-A4C1BCF9DD47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A754728-4DB8-4F64-A1BC-A4C1BCF9DD47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
