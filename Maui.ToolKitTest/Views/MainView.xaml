@@ -9,7 +9,7 @@
             Padding="30,0" 
             VerticalOptions="Center">
 
-            <Label 
+            <Entry
                 Text="{Binding InputText}"
                 SemanticProperties.HeadingLevel="Level2"
                 FontSize="18"
