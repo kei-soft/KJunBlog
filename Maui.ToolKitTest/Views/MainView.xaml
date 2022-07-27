@@ -21,6 +21,20 @@
                 Command="{Binding ResetCommand}"
                 HorizontalOptions="Center" />
 
+            <Entry
+                Text="{Binding Name}"
+                x:Name="nameEntry"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button 
+                Text="Reset"
+                SemanticProperties.Hint="Reset Text"
+                Command="{Binding ChangeTextCommand}"
+                CommandParameter="{Binding Source={x:Reference nameEntry}, Path=Text}"
+                HorizontalOptions="Center" />
+            
         </VerticalStackLayout>
     </ScrollView>
 
