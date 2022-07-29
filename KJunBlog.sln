@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Win.TeeChartLegendClickTest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf.ListViewSelectItemTest", "Wpf.ListViewSelectItemTest\Wpf.ListViewSelectItemTest.csproj", "{2A754728-4DB8-4F64-A1BC-A4C1BCF9DD47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.ToolKitTest", "Maui.ToolKitTest\Maui.ToolKitTest.csproj", "{7246035E-25D6-4F66-A444-99B7144BD887}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.ToolKitTest", "Maui.ToolKitTest\Maui.ToolKitTest.csproj", "{7246035E-25D6-4F66-A444-99B7144BD887}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.LottieTest", "Maui.LottieTest\Maui.LottieTest.csproj", "{DA4516EC-3FAB-4E61-85B9-98E1E577756C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +81,12 @@ Global
 		{7246035E-25D6-4F66-A444-99B7144BD887}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7246035E-25D6-4F66-A444-99B7144BD887}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7246035E-25D6-4F66-A444-99B7144BD887}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DA4516EC-3FAB-4E61-85B9-98E1E577756C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA4516EC-3FAB-4E61-85B9-98E1E577756C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA4516EC-3FAB-4E61-85B9-98E1E577756C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DA4516EC-3FAB-4E61-85B9-98E1E577756C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA4516EC-3FAB-4E61-85B9-98E1E577756C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA4516EC-3FAB-4E61-85B9-98E1E577756C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
