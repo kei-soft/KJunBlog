@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.ToolKitTest", "Maui.To
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.LottieTest", "Maui.LottieTest\Maui.LottieTest.csproj", "{DA4516EC-3FAB-4E61-85B9-98E1E577756C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.AdmobTest", "Maui.AdmobTest\Maui.AdmobTest.csproj", "{8A545609-943B-42BC-9D14-FEA603D6D195}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,12 @@ Global
 		{DA4516EC-3FAB-4E61-85B9-98E1E577756C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA4516EC-3FAB-4E61-85B9-98E1E577756C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DA4516EC-3FAB-4E61-85B9-98E1E577756C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8A545609-943B-42BC-9D14-FEA603D6D195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A545609-943B-42BC-9D14-FEA603D6D195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A545609-943B-42BC-9D14-FEA603D6D195}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8A545609-943B-42BC-9D14-FEA603D6D195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A545609-943B-42BC-9D14-FEA603D6D195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A545609-943B-42BC-9D14-FEA603D6D195}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
