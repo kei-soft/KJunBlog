@@ -1,7 +1,4 @@
-﻿using Maui.BlazorAppTest.Data;
-using Maui.BlazorAppTest.Services;
-
-namespace Maui.BlazorAppTest
+﻿namespace Maui.BlazorAppTest
 {
     public static class MauiProgram
     {
@@ -19,9 +16,6 @@ namespace Maui.BlazorAppTest
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
-
-            builder.Services.AddSingleton<IAppService, AppService>();
-            builder.Services.AddSingleton<WeatherForecastService>();
 
             return builder.Build();
         }

@@ -1,24 +1,18 @@
 ﻿@page "/"
 @using Maui.BlazorAppTest.Models
-@using Maui.BlazorAppTest.Services
-@using System.IdentityModel.Tokens.Jwt
-@using System.Security.Claims
-@using Newtonsoft.Json
-@inject IAppService AppService;
-@inject NavigationManager NavManager;
 <h3>Login</h3>
 
-<EditForm Model="@loginModel" OnValidSubmit="Submit">
+<EditForm Model="@loginUserModel" OnValidSubmit="Submit">
     <DataAnnotationsValidator />
     <div class="form-group">
         <label>Email address</label>
-        <input type="email" @bind-value="loginModel.UserName" class="form-control" placeholder="Enter email">
-        <ValidationMessage For="@(()=> loginModel.UserName)" />
+        <input type="email" @bind-value="loginUserModel.UserName" class="form-control" placeholder="Enter email">
+        <ValidationMessage For="@(()=> loginUserModel.UserName)" />
     </div>
     <div class="mt-2 form-group">
         <label>Password</label>
-        <input type="password" @bind-value="loginModel.Password" class="form-control" placeholder="Password">
-        <ValidationMessage For="@(()=> loginModel.Password)" />
+        <input type="password" @bind-value="loginUserModel.Password" class="form-control" placeholder="Password">
+        <ValidationMessage For="@(()=> loginUserModel.Password)" />
     </div>
 
     <div class="text-center mt-2">
@@ -29,7 +23,7 @@
 </EditForm>
 
 @code {
-    LoginModel loginModel = new();
+    LoginUserModel loginUserModel = new();
 
      private async void Submit()
     {

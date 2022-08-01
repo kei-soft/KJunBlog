@@ -2,7 +2,7 @@
 
 namespace Maui.BlazorAppTest.Models
 {
-    public class LoginModel
+    public class LoginUserModel
     {
 
         [Required]
