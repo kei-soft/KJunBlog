@@ -1,0 +1,27 @@
+﻿<Window x:Class="Wpf.ControlCapture.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf.ControlCapture"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="400">
+    <StackPanel>
+        <Button Content="Capture" Height="30" Width="150" HorizontalAlignment="Left" Margin="10" Click="ButtonBase_OnClick"></Button>
+        <Grid x:Name="captureGrid" Margin="10" Background="SkyBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row = "0" Grid.Column="0" Text="캡쳐테스트" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+            <TextBlock Grid.Row = "0" Grid.Column="1" Text="캡쳐테스트" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic"></TextBlock>
+            <Border Grid.Row = "1" Grid.Column="0" Background="Black" />
+            <TextBlock Grid.Row = "1" Grid.Column="0" Text="캡쳐테스트" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+            <Image Grid.Row = "1" Grid.Column="1" Source="kei.png" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+        </Grid>
+    </StackPanel>
+</Window>
