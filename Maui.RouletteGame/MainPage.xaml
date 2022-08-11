@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Maui.RouletteGame.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Game">
+
+    <ScrollView>
+        <StackLayout>
+            <StackLayout
+                Margin="10"
+                HorizontalOptions="Center"
+                Orientation="Horizontal"
+                Spacing="10">
+                <Button
+                    x:Name="startButton"
+                    Clicked="StartButton_Clicked"
+                    CornerRadius="0"
+                    FontAttributes="Bold"
+                    Text="Start"
+                    TextColor="White" />
+                <Button
+                    x:Name="stopButton"
+                    Clicked="StopButton_Clicked"
+                    CornerRadius="0"
+                    FontAttributes="Bold"
+                    Text="Stop"
+                    TextColor="White" />
+            </StackLayout>
+            <Grid>
+                <Image
+                    x:Name="circleImage"
+                    Margin="10"
+                    HorizontalOptions="Center"
+                    Source="roulette.png"
+                    VerticalOptions="Center" />
+                <Label
+                    Margin="0"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Text="▼"
+                    TextColor="Gray"
+                    VerticalOptions="Start"
+                    VerticalTextAlignment="Start" />
+                <Button
+                    x:Name="centerButton"
+                    Margin="10"
+                    Padding="0"
+                    BackgroundColor="Gray"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    WidthRequest="40" />
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
