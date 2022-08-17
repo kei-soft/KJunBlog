@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Maui.LikePancakeView.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White">
+
+    <Grid
+        Margin="0"
+        Padding="0"
+        RowDefinitions="100,100,100,200,*">
+
+        <Border
+            Grid.Row="0"
+            Margin="5"
+            StrokeThickness="0">
+            <Border.Shadow>
+                <Shadow
+                    Opacity="1"
+                    Radius="20"
+                    Offset="0,10">
+                    <Shadow.Brush>
+                        <LinearGradientBrush>
+                            <GradientStop Offset="0.1" Color="LightGray" />
+                            <GradientStop Offset="1.0" Color="Gray" />
+                        </LinearGradientBrush>
+                    </Shadow.Brush>
+                </Shadow>
+            </Border.Shadow>
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="0, 50, 0, 50" />
+            </Border.StrokeShape>
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Offset="0.1" Color="SkyBlue" />
+                    <GradientStop Offset="1.0" Color="#253890" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Label
+            Grid.Row="0"
+            FontAttributes="Bold"
+            FontSize="30"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="MAUI"
+            TextColor="White"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center">
+            <Label.Shadow>
+                <Shadow
+                    Opacity="1"
+                    Radius="10"
+                    Offset="10,10">
+                    <Shadow.Brush>
+                        <LinearGradientBrush>
+                            <GradientStop Offset="0.1" Color="Black" />
+                            <GradientStop Offset="1.0" Color="Gray" />
+                        </LinearGradientBrush>
+                    </Shadow.Brush>
+                </Shadow>
+            </Label.Shadow>
+        </Label>
+
+        <Border
+            Grid.Row="1"
+            Margin="5"
+            StrokeThickness="0">
+            <Border.Shadow>
+                <Shadow
+                    Opacity="1"
+                    Radius="10"
+                    Offset="0,10">
+                    <Shadow.Brush>
+                        <LinearGradientBrush>
+                            <GradientStop Offset="0.1" Color="LightGray" />
+                            <GradientStop Offset="1.0" Color="Gray" />
+                        </LinearGradientBrush>
+                    </Shadow.Brush>
+                </Shadow>
+            </Border.Shadow>
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="0, 0, 50, 50" />
+            </Border.StrokeShape>
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Offset="0.1" Color="SkyBlue" />
+                    <GradientStop Offset="1.0" Color="#253890" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Label
+            Grid.Row="1"
+            FontAttributes="Bold"
+            FontSize="30"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="MAUI"
+            TextColor="White"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center">
+            <Label.Shadow>
+                <Shadow
+                    Opacity="1"
+                    Radius="0"
+                    Offset="10,10">
+                    <Shadow.Brush>
+                        <LinearGradientBrush>
+                            <GradientStop Offset="0.1" Color="Black" />
+                            <GradientStop Offset="1.0" Color="Gray" />
+                        </LinearGradientBrush>
+                    </Shadow.Brush>
+                </Shadow>
+            </Label.Shadow>
+        </Label>
+
+        <Border
+            Grid.Row="2"
+            Margin="5"
+            StrokeThickness="0">
+            <Border.Shadow>
+                <Shadow
+                    Opacity="1"
+                    Radius="10"
+                    Offset="0,10">
+                    <Shadow.Brush>
+                        <LinearGradientBrush>
+                            <GradientStop Offset="0.1" Color="LightGray" />
+                            <GradientStop Offset="1.0" Color="Gray" />
+                        </LinearGradientBrush>
+                    </Shadow.Brush>
+                </Shadow>
+            </Border.Shadow>
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="50, 50, 50, 50" />
+            </Border.StrokeShape>
+            <Border.Background>
+                <RadialGradientBrush Center="0.5,0.5">
+                    <GradientStop Offset="0" Color="#253890" />
+                    <GradientStop Offset="0.8" Color="SkyBlue" />
+                </RadialGradientBrush>
+            </Border.Background>
+        </Border>
+        <Label
+            Grid.Row="2"
+            FontAttributes="Bold"
+            FontSize="30"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="MAUI"
+            TextColor="White"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center">
+            <Label.Shadow>
+                <Shadow
+                    Opacity="1"
+                    Radius="0"
+                    Offset="0,15">
+                    <Shadow.Brush>
+                        <LinearGradientBrush>
+                            <GradientStop Offset="0.1" Color="Black" />
+                            <GradientStop Offset="1.0" Color="Gray" />
+                        </LinearGradientBrush>
+                    </Shadow.Brush>
+                </Shadow>
+            </Label.Shadow>
+        </Label>
+
+        <Border
+            Grid.Row="3"
+            Margin="5"
+            StrokeThickness="0">
+            <Border.Shadow>
+                <Shadow
+                    Opacity="1"
+                    Radius="10"
+                    Offset="0,10">
+                    <Shadow.Brush>
+                        <LinearGradientBrush>
+                            <GradientStop Offset="0.1" Color="LightGray" />
+                            <GradientStop Offset="1.0" Color="Gray" />
+                        </LinearGradientBrush>
+                    </Shadow.Brush>
+                </Shadow>
+            </Border.Shadow>
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="0, 0, 350, 350" />
+            </Border.StrokeShape>
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Offset="0.1" Color="#253890" />
+                    <GradientStop Offset="1.0" Color="SkyBlue" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+    </Grid>
+</ContentPage>

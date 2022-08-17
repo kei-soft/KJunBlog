@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-using System.Drawing;
-using System.Runtime.CompilerServices;
+﻿using System.Drawing;
 
 namespace Wpf.DevGridTest
 {
@@ -13,6 +11,8 @@ namespace Wpf.DevGridTest
         //private Brush cellColor;
 
         public Brush CellColor { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
         //{
         //    get => this.cellColor;
         //    set
