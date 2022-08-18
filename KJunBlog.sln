@@ -39,7 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.RouletteGame", "Maui.R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLogTest", "NLogTest\NLogTest.csproj", "{F1D8994F-2821-458A-868B-579BA1DB24F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.LikePancakeView", "Maui.LikePancakeView\Maui.LikePancakeView.csproj", "{AF8AFDA6-59A4-4A24-8589-82DFE1A2FF81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.LikePancakeView", "Maui.LikePancakeView\Maui.LikePancakeView.csproj", "{AF8AFDA6-59A4-4A24-8589-82DFE1A2FF81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.SearchBarTest", "Maui.SearchBarTest\Maui.SearchBarTest.csproj", "{F2CF8446-E1CF-4D48-99D8-A3FE4A14150B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +145,12 @@ Global
 		{AF8AFDA6-59A4-4A24-8589-82DFE1A2FF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF8AFDA6-59A4-4A24-8589-82DFE1A2FF81}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AF8AFDA6-59A4-4A24-8589-82DFE1A2FF81}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F2CF8446-E1CF-4D48-99D8-A3FE4A14150B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2CF8446-E1CF-4D48-99D8-A3FE4A14150B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2CF8446-E1CF-4D48-99D8-A3FE4A14150B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F2CF8446-E1CF-4D48-99D8-A3FE4A14150B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2CF8446-E1CF-4D48-99D8-A3FE4A14150B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2CF8446-E1CF-4D48-99D8-A3FE4A14150B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

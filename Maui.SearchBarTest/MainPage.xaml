@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Maui.SearchBarTest.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ScrollView>
+        <Grid Margin="10" RowDefinitions="40,*">
+            <!--  MVVM  -->
+            <SearchBar
+                x:Name="searchBar"
+                Grid.Row="0"
+                Placeholder="Search items..."
+                SearchCommand="{Binding SearchCommand}"
+                SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}" />
+            <CollectionView
+                x:Name="collectionView"
+                Grid.Row="2"
+                Margin="5"
+                ItemsSource="{Binding SearchResults}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Margin="10,0,0,0" Text="{Binding ID}" />
+                            <Label Margin="10,0,0,0" Text="{Binding Name}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!--  NO MVVM  -->
+            <!--<SearchBar
+                x:Name="searchBar"
+                Grid.Row="0"
+                Placeholder="Search items..."
+                TextChanged="SearchBar_TextChanged" />
+            <CollectionView x:Name="collectionView" Grid.Row="2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Margin="10" Text="{Binding ID}" />
+                            <Label Margin="10" Text="{Binding Name}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>-->
+        </Grid>
+    </ScrollView>
+</ContentPage>
