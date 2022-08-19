@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Maui.ZxingBarcodeTest.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI">
+
+    <Grid RowDefinitions="*,*">
+        <zxing:CameraBarcodeReaderView
+            x:Name="barcodeReader"
+            Grid.Row="0"
+            BarcodesDetected="BarcodeReader_BarcodesDetected"
+            IsDetecting="True"
+            IsTorchOn="False" />
+        <HorizontalStackLayout
+            Grid.Row="0"
+            HorizontalOptions="End"
+            VerticalOptions="Start">
+            <Switch
+                x:Name="touchOnSwitch"
+                IsToggled="False"
+                Toggled="touchOnSwitch_Toggled" />
+            <Label
+                Margin="0,0,10,0"
+                Text="Light"
+                TextColor="White"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout
+            Grid.Row="0"
+            HorizontalOptions="Start"
+            VerticalOptions="Start">
+            <Label
+                Margin="10,0,0,0"
+                Text="Rear"
+                TextColor="White"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center" />
+            <Switch
+                x:Name="cameraSwitch"
+                IsToggled="False"
+                Toggled="cameraSwitch_Toggled" />
+            <Label
+                Margin="0"
+                Text="Front"
+                TextColor="White"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center" />
+        </HorizontalStackLayout>
+        <Label
+            x:Name="barcodeResult"
+            Grid.Row="0"
+            FontSize="18"
+            VerticalOptions="End"
+            VerticalTextAlignment="Center" />
+
+        <zxing:BarcodeGeneratorView
+            x:Name="generateBarcode"
+            Grid.Row="1"
+            Margin="20"
+            ForegroundColor="Black"
+            Format="QrCode" />
+        <!--<Label
+            Grid.Row="1"
+            FontSize="18"
+            HorizontalOptions="Center"
+            Text="kjun.kr"
+            VerticalOptions="End"
+            VerticalTextAlignment="Center" />-->
+    </Grid>
+
+</ContentPage>
