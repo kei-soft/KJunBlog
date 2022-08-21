@@ -48,4 +48,11 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="Plugin.MauiMTAdmob" Version="1.0.1" />
+	</ItemGroup>
+	
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
+		<AndroidLibrary Include="Dependencies\user-messaging-platform-2.0.0.aar" Bind="false" />
+	</ItemGroup>
 </Project>

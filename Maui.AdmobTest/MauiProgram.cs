@@ -1,4 +1,6 @@
-﻿namespace Maui.AdmobTest
+﻿using Plugin.MauiMTAdmob;
+
+namespace Maui.AdmobTest
 {
     public static class MauiProgram
     {
@@ -7,6 +9,7 @@
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiMTAdmob() // 추가
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
