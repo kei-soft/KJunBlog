@@ -53,6 +53,7 @@ namespace Maui.AdmobTest
             }
 
             CrossMauiMTAdmob.Current.OnInterstitialOpened += (s, e) => DisplayAlert("AdMobTest", "Interstitial Open", "OK");
+            CrossMauiMTAdmob.Current.OnInterstitialLoaded += (s, e) => DisplayAlert("AdMobTest", "Interstitial Loaded", "OK");
             CrossMauiMTAdmob.Current.OnInterstitialClosed += (s, e) => DisplayAlert("AdMobTest", "Interstitial Close", "OK");
         }
 
