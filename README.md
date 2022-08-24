@@ -1,4 +1,4 @@
-# KJunBlog
+# KJunBlog / Keisoft
 
 https://kjun.kr (kjcoder.tistory.com)
 
