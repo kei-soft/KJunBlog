@@ -25,6 +25,21 @@ namespace Maui.AudioTest.ViewModels
             }
         }
 
+
+        private string status = "Wait";
+        public string Status
+        {
+            get
+            {
+                return this.status;
+            }
+            set
+            {
+                this.status = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         public Command PlayCommand { get; set; }
         public Command PauseCommand { get; set; }
         public Command StopCommand { get; set; }
@@ -70,6 +85,7 @@ namespace Maui.AudioTest.ViewModels
         void OnPlayCommand()
         {
             audioPlayer.Play();
+            Status = "Play";
         }
         #endregion
         #region OnPauseCommand
@@ -78,10 +94,12 @@ namespace Maui.AudioTest.ViewModels
             if (audioPlayer.IsPlaying)
             {
                 audioPlayer.Pause();
+                Status = "Pause";
             }
             else
             {
                 audioPlayer.Play();
+                Status = "Play";
             }
         }
         #endregion
@@ -91,6 +109,7 @@ namespace Maui.AudioTest.ViewModels
             if (audioPlayer.IsPlaying)
             {
                 audioPlayer.Stop();
+                Status = "Stop";
             }
         }
         #endregion

@@ -2,7 +2,8 @@
 <ContentPage
     x:Class="Maui.AudioTest.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White">
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
@@ -10,7 +11,14 @@
             Spacing="25"
             VerticalOptions="Center">
 
-            <Label HorizontalOptions="Center" Text="Audio Test" />
+            <Label
+                HorizontalOptions="Center"
+                Text="Audio Test"
+                TextColor="Black" />
+            <Label
+                HorizontalOptions="Center"
+                Text="{Binding Status, StringFormat='[ {0} ]'}"
+                TextColor="Black" />
 
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
                 <Button
@@ -19,6 +27,7 @@
                     HeightRequest="50"
                     SemanticProperties.Hint="Start playing"
                     Text="▶"
+                    TextColor="White"
                     WidthRequest="50" />
 
                 <Button
@@ -28,6 +37,7 @@
                     HeightRequest="50"
                     SemanticProperties.Hint="Pause playing"
                     Text="||"
+                    TextColor="White"
                     WidthRequest="50" />
 
                 <Button
@@ -36,6 +46,7 @@
                     HeightRequest="50"
                     SemanticProperties.Hint="Stop playing"
                     Text="■"
+                    TextColor="White"
                     WidthRequest="50" />
             </HorizontalStackLayout>
 
