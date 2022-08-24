@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Maui.LiveChartTest.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui">
+
+    <Grid>
+
+        <lvc:PieChart BackgroundColor="Black" Series="{Binding Series}" />
+        <Label
+            Margin="10"
+            FontSize="30"
+            Text="Hello LiveChart2"
+            TextColor="White" />
+    </Grid>
+
+</ContentPage>
