@@ -5,14 +5,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui">
 
-    <Grid>
-
-        <lvc:PieChart BackgroundColor="Black" Series="{Binding Series}" />
+    <Grid RowDefinitions="50,*">
         <Label
+            Grid.Row="0"
             Margin="10"
             FontSize="30"
             Text="Hello LiveChart2"
             TextColor="White" />
+        <lvc:PieChart
+            Grid.Row="1"
+            BackgroundColor="Black"
+            Series="{Binding Series}" />
     </Grid>
 
 </ContentPage>

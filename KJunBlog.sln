@@ -47,7 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.ZxingBarcodeTest", "Ma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.LiveChartTest", "Maui.LiveChartTest\Maui.LiveChartTest.csproj", "{610FEA51-4D5B-4A10-A8BF-8CB9FD5CC792}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.AudioTest", "Maui.AudioTest\Maui.AudioTest.csproj", "{B7C03736-FB41-4185-809C-474A0CDA0A23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.AudioTest", "Maui.AudioTest\Maui.AudioTest.csproj", "{B7C03736-FB41-4185-809C-474A0CDA0A23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win.TeeChartZoomTest", "Win.TeeChartZoomTest\Win.TeeChartZoomTest.csproj", "{1462D189-E46C-43C3-A8DC-8BF9637C5A3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -175,6 +177,10 @@ Global
 		{B7C03736-FB41-4185-809C-474A0CDA0A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7C03736-FB41-4185-809C-474A0CDA0A23}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B7C03736-FB41-4185-809C-474A0CDA0A23}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1462D189-E46C-43C3-A8DC-8BF9637C5A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1462D189-E46C-43C3-A8DC-8BF9637C5A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1462D189-E46C-43C3-A8DC-8BF9637C5A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1462D189-E46C-43C3-A8DC-8BF9637C5A3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
