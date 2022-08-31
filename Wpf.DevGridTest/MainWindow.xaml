@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
     xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
     xmlns:local="clr-namespace:Wpf.DevGridTest"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -29,8 +30,80 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
-        <dxg:GridControl Height="300" ItemsSource="{Binding Items}">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <dxe:TrackBarEdit
+            Grid.Row="0"
+            Margin="10"
+            Padding="10"
+            CornerRadius="4"
+            Maximum="1"
+            Minimum="0"
+            SelectionEnd="0.8"
+            SelectionStart="0.2"
+            SmallStep="0.1"
+            TickFrequency="0.1"
+            TickItemDisplayMode="TickAndText"
+            TickPlacement="BottomRight"
+            Ticks="0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1"
+            TrackHeight="8">
+            <dxe:TrackBarEdit.StyleSettings>
+                <dxe:TrackBarRangeStyleSettings />
+            </dxe:TrackBarEdit.StyleSettings>
+        </dxe:TrackBarEdit>
+
+        <dxe:TrackBarEdit
+            Grid.Row="1"
+            Margin="10"
+            Padding="10"
+            dxe:EditorAppearanceProperties.FocusedBorderBrush="Gray"
+            CornerRadius="4"
+            Maximum="1"
+            Minimum="0"
+            SelectionEnd="0.8"
+            SelectionStart="0.2"
+            SmallStep="0.1"
+            TickFrequency="0.1"
+            TickItemDisplayMode="TickAndText"
+            TickPlacement="BottomRight"
+            Ticks="0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1"
+            TrackHeight="8">
+            <dxe:TrackBarEdit.ValueToolTipContentTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{DXBinding '`From ` + SelectionStart + ` to ` + SelectionEnd'}" />
+                </DataTemplate>
+            </dxe:TrackBarEdit.ValueToolTipContentTemplate>
+            <dxe:TrackBarEdit.StyleSettings>
+                <dxe:TrackBarRangeStyleSettings>
+                    <dxe:TrackBarRangeStyleSettings.SelectedRangeBackgroundStyle>
+                        <Style TargetType="ContentControl">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <Border
+                                            Height="8"
+                                            Margin="-10,0"
+                                            VerticalAlignment="Center"
+                                            Background="Black"
+                                            CornerRadius="4" />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </dxe:TrackBarRangeStyleSettings.SelectedRangeBackgroundStyle>
+                </dxe:TrackBarRangeStyleSettings>
+            </dxe:TrackBarEdit.StyleSettings>
+        </dxe:TrackBarEdit>
+
+        <dxg:GridControl
+            Grid.Row="2"
+            Height="300"
+            ItemsSource="{Binding Items}">
             <dxg:GridColumn FieldName="CellColor" Header="COLOR">
                 <dxg:GridColumn.CellTemplate>
                     <DataTemplate>
@@ -47,6 +120,5 @@
                     ShowGroupPanel="False" />
             </dxg:GridControl.View>
         </dxg:GridControl>
-
     </Grid>
 </Window>
