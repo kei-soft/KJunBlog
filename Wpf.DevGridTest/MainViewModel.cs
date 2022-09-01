@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
@@ -23,6 +24,30 @@ namespace Wpf.DevGridTest
             }
         }
 
+        private DateTime fromDate;
+
+        public DateTime FromDate
+        {
+            get => this.fromDate;
+            set
+            {
+                this.fromDate = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private DateTime toDate;
+
+        public DateTime ToDate
+        {
+            get => this.toDate;
+            set
+            {
+                this.toDate = value;
+                OnPropertyChanged();
+            }
+        }
+
         public MainViewModel()
         {
             items = new ObservableCollection<ItemModel>();
@@ -33,6 +58,9 @@ namespace Wpf.DevGridTest
             items.Add(new ItemModel() { CellColor = new System.Drawing.SolidBrush(Color.Purple), Name = "윤봉길", Age = 15 });
 
             this.Items = items;
+
+            FromDate = DateTime.Now.AddDays(-10);
+            ToDate = DateTime.Now;
         }
     }
 }

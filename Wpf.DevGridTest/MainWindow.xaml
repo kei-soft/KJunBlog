@@ -28,10 +28,13 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <local:DateToDaysConverter x:Key="DateToDaysConverter" />
     </Window.Resources>
 
     <Grid Margin="20">
         <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
             <RowDefinition Height="60" />
             <RowDefinition Height="60" />
             <RowDefinition Height="*" />
@@ -100,8 +103,28 @@
             </dxe:TrackBarEdit.StyleSettings>
         </dxe:TrackBarEdit>
 
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <dxe:DateEdit
+                Width="90"
+                Height="30"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Right"
+                DisplayTextConverter="{StaticResource DateToDaysConverter}"
+                EditValue="{Binding FromDate}" />
+            <Label
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Right"
+                Content="~" />
+            <dxe:DateEdit
+                Width="90"
+                Height="30"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Right"
+                DisplayTextConverter="{StaticResource DateToDaysConverter}"
+                EditValue="{Binding ToDate}" />
+        </StackPanel>
         <dxg:GridControl
-            Grid.Row="2"
+            Grid.Row="3"
             Height="300"
             ItemsSource="{Binding Items}">
             <dxg:GridColumn FieldName="CellColor" Header="COLOR">
