@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Maui.MapTest.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:map="clr-namespace:Syncfusion.Maui.Maps;assembly=Syncfusion.Maui.Maps"
+    BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+            <map:SfMaps HeightRequest="300">
+                <map:SfMaps.Layer>
+                    <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json" ShowShapeTooltip="True">
+                        <map:MapShapeLayer.Markers>
+                            <map:MapMarkerCollection>
+                                <map:MapMarker
+                                    IconFill="Blue"
+                                    IconHeight="15"
+                                    IconType="Triangle"
+                                    IconWidth="15"
+                                    Latitude="37.442018"
+                                    Longitude="126.996245" />
+                                <map:MapMarker
+                                    IconFill="#00ccff"
+                                    IconHeight="15"
+                                    IconType="Circle"
+                                    IconWidth="15"
+                                    Latitude="20.5595"
+                                    Longitude="22.9375" />
+                                <map:MapMarker
+                                    IconFill="#00ccff"
+                                    IconHeight="15"
+                                    IconType="Circle"
+                                    IconWidth="15"
+                                    Latitude="21.7679"
+                                    Longitude="78.8718" />
+                                <map:MapMarker
+                                    IconFill="#00ccff"
+                                    IconHeight="15"
+                                    IconType="Circle"
+                                    IconWidth="15"
+                                    Latitude="133.7751"
+                                    Longitude="25.2744" />
+                                <map:MapMarker
+                                    IconFill="#00ccff"
+                                    IconHeight="15"
+                                    IconType="Circle"
+                                    IconWidth="15"
+                                    Latitude="60.2551"
+                                    Longitude="84.5260" />
+                                <map:MapMarker
+                                    IconFill="#00ccff"
+                                    IconHeight="15"
+                                    IconType="Circle"
+                                    IconWidth="15"
+                                    Latitude="195.4915"
+                                    Longitude="-50.7832" />
+                            </map:MapMarkerCollection>
+                        </map:MapShapeLayer.Markers>
+                    </map:MapShapeLayer>
+                </map:SfMaps.Layer>
+            </map:SfMaps>
+            <Button Clicked="LocationButton_Clicked" Text="관문체육공원 위치 맵 열기" />
+            <Button Clicked="DriveButton_Clicked" Text="관문체육공원 네비게이션 실행" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
