@@ -36,5 +36,12 @@ namespace Maui.ToolKitMaui
 
             snackbar.Show(cancellationTokenSource.Token);
         }
+
+        private void toastButton_Clicked(object sender, EventArgs e)
+        {
+            CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+
+            Toast.Make("This is a Toast", ToastDuration.Short, 14).Show(cancellationTokenSource.Token);
+        }
     }
 }

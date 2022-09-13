@@ -15,7 +15,11 @@
                 Clicked="snackbarButton_Clicked"
                 HorizontalOptions="Center"
                 Text="Show Snackbar" />
-
+            <Button
+                x:Name="toastButton"
+                Clicked="toastButton_Clicked"
+                HorizontalOptions="Center"
+                Text="Show Toast" />
         </VerticalStackLayout>
     </ScrollView>
 
