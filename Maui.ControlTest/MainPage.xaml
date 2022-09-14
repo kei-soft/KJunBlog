@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Maui.ControlTest.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            HorizontalOptions="Center"
+            Spacing="25">
+
+            <Picker
+                Title="Select Country"
+                BackgroundColor="Green"
+                TextColor="White">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Korea</x:String>
+                        <x:String>Sudan</x:String>
+                        <x:String>United States</x:String>
+                        <x:String>Japan</x:String>
+                        <x:String>China</x:String>
+                        <x:String>Macedonia</x:String>
+                        <x:String>Greece</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <HorizontalStackLayout>
+                <Picker
+                    x:Name="picker"
+                    Title="Select Country"
+                    BackgroundColor="SkyBlue"
+                    ItemDisplayBinding="{Binding Name}"
+                    ItemsSource="{Binding Items}"
+                    TextColor="White" />
+                <Label
+                    Margin="10"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding Source={x:Reference picker}, Path=SelectedItem.ID}"
+                    VerticalOptions="End" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

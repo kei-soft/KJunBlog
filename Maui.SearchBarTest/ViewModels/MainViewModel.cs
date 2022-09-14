@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+
 using Maui.SearchBarTest.Models;
 using Maui.SearchBarTest.Services;
 
