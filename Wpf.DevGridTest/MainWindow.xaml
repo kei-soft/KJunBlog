@@ -152,6 +152,7 @@
             SelectionMode="Cell">
             <dxg:GridControl.View>
                 <dxg:TableView
+                    AllowEditing="False"
                     CanSelectCell="TableView_CanSelectCell"
                     HeaderHorizontalAlignment="Center"
                     NavigationStyle="Cell"

@@ -15,7 +15,10 @@ namespace Wpf.DevGridTest
 
         private void TableView_CanSelectCell(object sender, DevExpress.Xpf.Grid.CanSelectCellEventArgs e)
         {
-
+            if (e.Column.FieldName == "ID")
+            {
+                e.CanSelectCell = false;
+            }
         }
     }
 }
