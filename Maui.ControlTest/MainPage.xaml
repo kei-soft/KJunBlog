@@ -6,7 +6,7 @@
 
     <ScrollView>
         <VerticalStackLayout
-            Padding="30,0"
+            Padding="15,10"
             HorizontalOptions="Center"
             Spacing="25">
 
@@ -42,6 +42,25 @@
                     VerticalOptions="End" />
             </HorizontalStackLayout>
 
+            <TableView Intent="Data">
+                <TableRoot>
+                    <TableSection Title="KJUN">
+                        <TextCell
+                            Command="{Binding SiteCommand}"
+                            Detail="Visit site KJUN (kjun.kr)"
+                            Text="Introduction to KJUN" />
+                        <ImageCell
+                            Detail="Intorduce keisoft"
+                            ImageSource="kei.png"
+                            Text="KEISOFT" />
+                        <EntryCell Label="Input Text" Placeholder="" />
+                    </TableSection>
+                    <TableSection Title="Setting">
+                        <SwitchCell On="False" Text="Push Notification" />
+                        <SwitchCell On="False" Text="Airplane Mode" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
         </VerticalStackLayout>
     </ScrollView>
 

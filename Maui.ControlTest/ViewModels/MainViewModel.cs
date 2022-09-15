@@ -28,6 +28,8 @@ namespace Maui.ControlTest.ViewModels
             }
         }
 
+        public Command SiteCommand { get; set; }
+
         public MainViewModel()
         {
             List<ItemModel> itemModels = new List<ItemModel>();
@@ -37,6 +39,14 @@ namespace Maui.ControlTest.ViewModels
             itemModels.Add(new ItemModel() { Name = "Greece", ID = 4 });
 
             Items = itemModels;
+
+            SiteCommand = new Command(OnSiteCommand);
+        }
+
+        private async void OnSiteCommand()
+        {
+            Uri uri = new Uri("http://kjun.kr");
+            await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
     }
 }
