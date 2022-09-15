@@ -45,7 +45,6 @@ namespace Maui.ControlTest.ViewModels
         public Command SiteCommand { get; set; }
         public Command DisplayPromptCommand { get; set; }
 
-
         public MainViewModel()
         {
             List<ItemModel> itemModels = new List<ItemModel>();

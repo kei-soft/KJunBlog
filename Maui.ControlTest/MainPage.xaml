@@ -13,6 +13,7 @@
             <Picker
                 Title="Select Country"
                 BackgroundColor="Green"
+                IsVisible="False"
                 TextColor="White">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -27,7 +28,7 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <HorizontalStackLayout>
+            <HorizontalStackLayout IsVisible="False">
                 <Picker
                     x:Name="picker"
                     Title="Select Country"
@@ -53,7 +54,7 @@
                             Detail="Intorduce keisoft"
                             ImageSource="kei.png"
                             Text="KEISOFT" />
-                        <EntryCell Label="Input Text" Placeholder="" />
+                        <EntryCell Label="Name" Placeholder="Input Name" />
                     </TableSection>
                     <TableSection Title="Setting">
                         <SwitchCell On="False" Text="Push Notification" />
@@ -62,7 +63,7 @@
                 </TableRoot>
             </TableView>
 
-            <HorizontalStackLayout>
+            <HorizontalStackLayout IsVisible="False">
                 <Button Command="{Binding DisplayPromptCommand}" Text="DisplayPrompt" />
                 <Label
                     Margin="5"
