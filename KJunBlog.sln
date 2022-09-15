@@ -59,7 +59,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.MapHandlerTest", "Maui
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.ToolKitMaui", "Maui.ToolKitMaui\Maui.ToolKitMaui.csproj", "{B50D52B3-42EC-4092-A10A-D4FA51D59096}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.ControlTest", "Maui.ControlTest\Maui.ControlTest.csproj", "{73808884-C7EB-49BA-BD9F-791ABDE8F1B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.ControlTest", "Maui.ControlTest\Maui.ControlTest.csproj", "{73808884-C7EB-49BA-BD9F-791ABDE8F1B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.ScreenShotTest", "Maui.ScreenShotTest\Maui.ScreenShotTest.csproj", "{FC06CD74-01F3-4642-BE0B-EF930C227661}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -219,6 +221,12 @@ Global
 		{73808884-C7EB-49BA-BD9F-791ABDE8F1B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73808884-C7EB-49BA-BD9F-791ABDE8F1B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{73808884-C7EB-49BA-BD9F-791ABDE8F1B0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FC06CD74-01F3-4642-BE0B-EF930C227661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC06CD74-01F3-4642-BE0B-EF930C227661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC06CD74-01F3-4642-BE0B-EF930C227661}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FC06CD74-01F3-4642-BE0B-EF930C227661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC06CD74-01F3-4642-BE0B-EF930C227661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC06CD74-01F3-4642-BE0B-EF930C227661}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
