@@ -10,10 +10,5 @@ namespace Maui.ControlTest
 
             this.BindingContext = new MainViewModel();
         }
-
-        private async void UCell_Tapped(object sender, EventArgs e)
-        {
-
-        }
     }
 }

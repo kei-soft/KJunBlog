@@ -28,7 +28,23 @@ namespace Maui.ControlTest.ViewModels
             }
         }
 
+        private string displayPromptText = "None";
+        public string DisplayPromptText
+        {
+            get
+            {
+                return displayPromptText;
+            }
+            set
+            {
+                displayPromptText = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         public Command SiteCommand { get; set; }
+        public Command DisplayPromptCommand { get; set; }
+
 
         public MainViewModel()
         {
@@ -41,12 +57,18 @@ namespace Maui.ControlTest.ViewModels
             Items = itemModels;
 
             SiteCommand = new Command(OnSiteCommand);
+            DisplayPromptCommand = new Command(OnDisplayPromptCommand);
         }
 
         private async void OnSiteCommand()
         {
             Uri uri = new Uri("http://kjun.kr");
             await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+        }
+
+        private async void OnDisplayPromptCommand()
+        {
+            DisplayPromptText = await Application.Current.MainPage.DisplayPromptAsync("Input Site", "\r\nWhere do you go to the site?");
         }
     }
 }
