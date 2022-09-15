@@ -12,5 +12,10 @@ namespace Wpf.DevGridTest
             InitializeComponent();
             this.DataContext = new MainViewModel();
         }
+
+        private void TableView_CanSelectCell(object sender, DevExpress.Xpf.Grid.CanSelectCellEventArgs e)
+        {
+
+        }
     }
 }
