@@ -61,7 +61,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.ToolKitMaui", "Maui.To
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.ControlTest", "Maui.ControlTest\Maui.ControlTest.csproj", "{73808884-C7EB-49BA-BD9F-791ABDE8F1B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.ScreenShotTest", "Maui.ScreenShotTest\Maui.ScreenShotTest.csproj", "{FC06CD74-01F3-4642-BE0B-EF930C227661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.ScreenShotTest", "Maui.ScreenShotTest\Maui.ScreenShotTest.csproj", "{FC06CD74-01F3-4642-BE0B-EF930C227661}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

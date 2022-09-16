@@ -1,4 +1,6 @@
-﻿namespace Maui.ToolKitMaui
+﻿using CommunityToolkit.Maui;
+
+namespace Maui.ToolKitMaui
 {
     public static class MauiProgram
     {
@@ -7,6 +9,7 @@
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
