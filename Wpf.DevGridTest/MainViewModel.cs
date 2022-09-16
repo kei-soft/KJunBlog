@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Drawing;
 using System.Dynamic;
 using System.Runtime.CompilerServices;
+using System.Windows.Media;
 
 namespace Wpf.DevGridTest
 {
@@ -18,7 +18,15 @@ namespace Wpf.DevGridTest
 
         public ObservableCollection<ItemModel> Items
         {
-            get => this.items;
+            get
+            {
+                if (this.items == null)
+                {
+                    this.items = new ObservableCollection<ItemModel>();
+                }
+
+                return this.items;
+            }
             set
             {
                 this.items = value;
@@ -72,15 +80,12 @@ namespace Wpf.DevGridTest
 
         public MainViewModel()
         {
-            // Cell Color - 확인필요
-            items = new ObservableCollection<ItemModel>();
-            items.Add(new ItemModel() { CellColor = new System.Drawing.SolidBrush(Color.Blue), Name = "홍길동", Age = 45 });
-            items.Add(new ItemModel() { CellColor = new System.Drawing.SolidBrush(Color.Yellow), Name = "유관순", Age = 57 });
-            items.Add(new ItemModel() { CellColor = new System.Drawing.SolidBrush(Color.Green), Name = "이순신", Age = 60 });
-            items.Add(new ItemModel() { CellColor = new System.Drawing.SolidBrush(Color.Red), Name = "강감찬", Age = 22 });
-            items.Add(new ItemModel() { CellColor = new System.Drawing.SolidBrush(Color.Purple), Name = "윤봉길", Age = 15 });
-
-            this.Items = items;
+            // Cell Color
+            this.Items.Add(new ItemModel() { CellColor = new SolidColorBrush(System.Windows.Media.Colors.Blue), Name = "홍길동", Age = 45 });
+            this.Items.Add(new ItemModel() { CellColor = new SolidColorBrush(System.Windows.Media.Colors.Yellow), Name = "유관순", Age = 57 });
+            this.Items.Add(new ItemModel() { CellColor = new SolidColorBrush(System.Windows.Media.Colors.Green), Name = "이순신", Age = 60 });
+            this.Items.Add(new ItemModel() { CellColor = new SolidColorBrush(System.Windows.Media.Colors.Red), Name = "강감찬", Age = 22 });
+            this.Items.Add(new ItemModel() { CellColor = new SolidColorBrush(System.Windows.Media.Colors.Purple), Name = "윤봉길", Age = 15 });
 
             // DateEdit
             FromDate = DateTime.Now.AddDays(-10);

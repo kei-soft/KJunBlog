@@ -13,7 +13,6 @@
             <Picker
                 Title="Select Country"
                 BackgroundColor="Green"
-                IsVisible="False"
                 TextColor="White">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -28,7 +27,7 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <HorizontalStackLayout IsVisible="False">
+            <HorizontalStackLayout>
                 <Picker
                     x:Name="picker"
                     Title="Select Country"
@@ -63,7 +62,7 @@
                 </TableRoot>
             </TableView>
 
-            <HorizontalStackLayout IsVisible="False">
+            <HorizontalStackLayout>
                 <Button Command="{Binding DisplayPromptCommand}" Text="DisplayPrompt" />
                 <Label
                     Margin="5"

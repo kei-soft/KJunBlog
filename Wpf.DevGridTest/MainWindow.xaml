@@ -128,20 +128,30 @@
             Grid.Row="3"
             Height="300"
             ItemsSource="{Binding Items}">
-            <dxg:GridColumn FieldName="CellColor" Header="COLOR">
+            <dxg:GridColumn
+                FieldName="CellColor"
+                Header="COLOR"
+                HorizontalHeaderContentAlignment="Center">
                 <dxg:GridColumn.CellTemplate>
                     <DataTemplate>
-                        <Border Background="{Binding Data}" />
+                        <Border Background="{Binding Data.CellColor}" />
                     </DataTemplate>
                 </dxg:GridColumn.CellTemplate>
             </dxg:GridColumn>
-            <dxg:GridColumn FieldName="Name" Header="NAME" />
-            <dxg:GridColumn FieldName="Age" Header="AGE" />
+            <dxg:GridColumn
+                FieldName="Name"
+                Header="NAME"
+                HorizontalHeaderContentAlignment="Center" />
+            <dxg:GridColumn
+                FieldName="Age"
+                Header="AGE"
+                HorizontalHeaderContentAlignment="Center" />
             <dxg:GridControl.View>
                 <dxg:TableView
                     CellStyle="{StaticResource FocusedCellStyle}"
                     RowStyle="{StaticResource FocusedRowStyle}"
-                    ShowGroupPanel="False" />
+                    ShowGroupPanel="False"
+                    ShowGridMenu="TableView_ShowGridMenu"/>
             </dxg:GridControl.View>
         </dxg:GridControl>
         <dxg:GridControl
