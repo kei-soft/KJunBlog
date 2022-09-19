@@ -22,10 +22,11 @@
                 x:Name="toastButton"
                 Clicked="toastButton_Clicked"
                 HorizontalOptions="Center"
-                Text="Show Toast" />
+                  Text="Show Toast" />
             <toolkit:UniformItemsLayout
                 Padding="10"
                 HorizontalOptions="Center"
+                MaxColumns="2"
                 VerticalOptions="Center">
                 <Image
                     Margin="10"

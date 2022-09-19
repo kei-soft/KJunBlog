@@ -30,6 +30,9 @@
         {
             Steema.TeeChart.Margins margins1 = new Steema.TeeChart.Margins();
             this.tChart1 = new Steema.TeeChart.TChart();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.excelButton = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tChart1
@@ -777,7 +780,7 @@
             this.tChart1.Axes.Top.Title.Shadow.Brush.Solid = true;
             this.tChart1.Axes.Top.Title.Shadow.Brush.Visible = true;
             this.tChart1.Axes.Top.UseMaxPixelPos = true;
-            this.tChart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tChart1.Dock = System.Windows.Forms.DockStyle.Top;
             // 
             // 
             // 
@@ -996,6 +999,7 @@
             this.tChart1.Legend.Title.Shadow.Brush.Solid = true;
             this.tChart1.Legend.Title.Shadow.Brush.Visible = true;
             this.tChart1.Location = new System.Drawing.Point(0, 0);
+            this.tChart1.Margin = new System.Windows.Forms.Padding(2);
             this.tChart1.Name = "tChart1";
             // 
             // 
@@ -1040,7 +1044,7 @@
             margins1.Right = 100;
             margins1.Top = 100;
             this.tChart1.Printer.Margins = margins1;
-            this.tChart1.Size = new System.Drawing.Size(800, 450);
+            this.tChart1.Size = new System.Drawing.Size(836, 419);
             // 
             // 
             // 
@@ -1267,14 +1271,36 @@
             this.tChart1.Zoom.Brush.Visible = true;
             this.tChart1.Zoom.FullRepaint = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.excelButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 419);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(836, 61);
+            this.panel1.TabIndex = 1;
+            // 
+            // excelButton
+            // 
+            this.excelButton.Location = new System.Drawing.Point(25, 14);
+            this.excelButton.Name = "excelButton";
+            this.excelButton.Size = new System.Drawing.Size(75, 23);
+            this.excelButton.TabIndex = 0;
+            this.excelButton.Text = "Excel";
+            this.excelButton.UseVisualStyleBackColor = true;
+            this.excelButton.Click += new System.EventHandler(this.excelButton_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(836, 480);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tChart1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1282,5 +1308,7 @@
         #endregion
 
         private Steema.TeeChart.TChart tChart1;
+        private Panel panel1;
+        private Button excelButton;
     }
 }

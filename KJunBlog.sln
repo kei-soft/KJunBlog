@@ -63,6 +63,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.ControlTest", "Maui.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.ScreenShotTest", "Maui.ScreenShotTest\Maui.ScreenShotTest.csproj", "{FC06CD74-01F3-4642-BE0B-EF930C227661}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.SqliteTest", "Maui.SqliteTest\Maui.SqliteTest.csproj", "{38919B24-2CE6-49DC-A333-464D6DA18C4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -227,6 +229,12 @@ Global
 		{FC06CD74-01F3-4642-BE0B-EF930C227661}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC06CD74-01F3-4642-BE0B-EF930C227661}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC06CD74-01F3-4642-BE0B-EF930C227661}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{38919B24-2CE6-49DC-A333-464D6DA18C4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38919B24-2CE6-49DC-A333-464D6DA18C4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38919B24-2CE6-49DC-A333-464D6DA18C4C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{38919B24-2CE6-49DC-A333-464D6DA18C4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38919B24-2CE6-49DC-A333-464D6DA18C4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38919B24-2CE6-49DC-A333-464D6DA18C4C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
