@@ -3,11 +3,26 @@
     x:Class="Maui.SqliteTest.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Gray" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
     <Grid
         Padding="15,15"
-        RowDefinitions=" 50,50,50,50,*"
-        VerticalOptions="Start">
+        RowDefinitions=" 50,50,50,*,50"
+        VerticalOptions="FillAndExpand">
 
         <Grid Grid.Row="0" ColumnDefinitions="100,*">
             <Label
@@ -18,6 +33,7 @@
             <Entry
                 Grid.Column="1"
                 BackgroundColor="LightGray"
+                HorizontalTextAlignment="Center"
                 Text="{Binding NewName, Mode=TwoWay}"
                 VerticalOptions="Center"
                 VerticalTextAlignment="Center" />
@@ -32,58 +48,90 @@
             <Entry
                 Grid.Column="1"
                 BackgroundColor="LightGray"
+                HorizontalTextAlignment="Center"
                 Keyboard="Numeric"
                 Text="{Binding NewAge, Mode=TwoWay}"
                 VerticalOptions="Center"
                 VerticalTextAlignment="Center" />
         </Grid>
 
-        <Button
-            Grid.Row="2"
-            Margin="5"
-            Command="{Binding SaveCommand}"
-            Text="Save" />
-
-        <HorizontalStackLayout Grid.Row="3">
-            <Grid ColumnDefinitions="*,*">
-                <Button
-                    Grid.Column="0"
-                    Margin="5"
-                    Command="{Binding DeleteCommand}"
-                    Text="All Delete" />
-            </Grid>
+        <HorizontalStackLayout Grid.Row="2" HorizontalOptions="End">
+            <Button
+                Grid.Row="2"
+                Margin="0,5"
+                Command="{Binding SaveCommand}"
+                CornerRadius="0"
+                WidthRequest="100">
+                <Button.Triggers>
+                    <DataTrigger
+                        Binding="{Binding IsUpdate}"
+                        TargetType="Button"
+                        Value="True">
+                        <Setter Property="Text" Value="Update" />
+                    </DataTrigger>
+                    <DataTrigger
+                        Binding="{Binding IsUpdate}"
+                        TargetType="Button"
+                        Value="False">
+                        <Setter Property="Text" Value="Add" />
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
         </HorizontalStackLayout>
 
         <CollectionView
-            x:Name="list"
-            Grid.Row="4"
+            x:Name="myCollectionView"
+            Grid.Row="3"
             ItemsSource="{Binding Students}"
-            SelectionChangedCommand="{Binding ChangeSelectStudentCommand}">
-            <!--  SelectedItem="{Binding SelectStudent}"  -->
+            SelectedItem="{Binding SelectStudent}"
+            SelectionChangedCommand="{Binding ChangeSelectStudentCommand}"
+            SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference myCollectionView}}"
+            SelectionMode="Single">
+
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid ColumnDefinitions="100,*">
-                        <Grid.GestureRecognizers>
+                    <Border StrokeThickness="1">
+                        <Grid
+                            Margin="5"
+                            Padding="10"
+                            ColumnDefinitions="100,*">
+                            <!--<Grid.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding ChangeSelectStudentCommand}" />
-                        </Grid.GestureRecognizers>
-                        <Label
-                            Grid.Column="0"
-                            FontAttributes="Bold"
-                            FontSize="18"
-                            Text="{Binding Name}"
-                            VerticalOptions="Center"
-                            VerticalTextAlignment="Center" />
-                        <Label
-                            Grid.Column="1"
-                            FontAttributes="Bold"
-                            FontSize="18"
-                            Text="{Binding Age}"
-                            VerticalOptions="Center"
-                            VerticalTextAlignment="Center" />
-                    </Grid>
+                        </Grid.GestureRecognizers>-->
+                            <Label
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="18"
+                                Text="{Binding Name}"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="18"
+                                Text="{Binding Age}"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
+                        </Grid>
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
+        <HorizontalStackLayout
+            Grid.Row="4"
+            HorizontalOptions="End"
+            VerticalOptions="End">
+            <Grid ColumnDefinitions="*,*">
+                <Button
+                    Grid.Column="0"
+                    Margin="0,5"
+                    Command="{Binding DeleteCommand}"
+                    CornerRadius="0"
+                    Text="All Delete"
+                    WidthRequest="100" />
+            </Grid>
+        </HorizontalStackLayout>
 
     </Grid>
 </ContentPage>

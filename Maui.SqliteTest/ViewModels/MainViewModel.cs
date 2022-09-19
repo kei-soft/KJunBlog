@@ -10,14 +10,33 @@ namespace Maui.SqliteTest.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
-
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        #endregion
 
+        #region Fields
         StudentHelper studentHelper = new StudentHelper();
+        #endregion
+
+        #region Properties
+        private bool isUpdate = false;
+
+        public bool IsUpdate
+        {
+            get
+            {
+                return this.isUpdate;
+            }
+            set
+            {
+                this.isUpdate = value;
+                OnPropertyChanged();
+            }
+        }
 
         private string newName;
 
@@ -83,33 +102,50 @@ namespace Maui.SqliteTest.ViewModels
                 OnPropertyChanged();
             }
         }
+        #endregion
 
-        //public ICommand SelectCommand => new Command(p => OnSelectCommand());
-        public ICommand ChangeSelectStudentCommand => new Command(p => OnChangeSelectStudentCommand());
-
+        #region Commands
+        public ICommand ChangeSelectStudentCommand => new Command<StudentModel>(p => OnChangeSelectStudentCommand(p));
         public ICommand SaveCommand => new Command(p => OnSaveCommand());
         public ICommand DeleteCommand => new Command(p => OnDeleteCommand());
-
+        #endregion
 
         public MainViewModel()
         {
             GetStudentList();
         }
 
-        private void OnChangeSelectStudentCommand()
+        private void OnChangeSelectStudentCommand(StudentModel studentModel)
         {
+            this.IsUpdate = true;
 
+            this.NewName = this.SelectStudent.Name;
+            this.NewAge = this.SelectStudent.Age;
         }
 
         private async void OnSaveCommand()
         {
-            StudentModel newStudent = new StudentModel();
-            newStudent.Name = this.newName;
-            newStudent.Age = this.newAge;
+            if (this.IsUpdate)
+            {
+                this.SelectStudent.Name = this.NewName;
+                this.SelectStudent.Age = this.NewAge;
 
-            int i = await studentHelper.AddStudent(newStudent);
+                int i = await studentHelper.UpdateStudent(this.SelectStudent);
 
-            await Application.Current.MainPage.DisplayAlert("Save", "Save Complete", "ok");
+                await Application.Current.MainPage.DisplayAlert("Update", "Update Complete", "ok");
+
+                this.IsUpdate = false;
+            }
+            else
+            {
+                StudentModel newStudent = new StudentModel();
+                newStudent.Name = this.newName;
+                newStudent.Age = this.newAge;
+
+                int i = await studentHelper.AddStudent(newStudent);
+
+                await Application.Current.MainPage.DisplayAlert("Save", "Save Complete", "ok");
+            }
 
             this.NewName = "";
             this.NewAge = "";
