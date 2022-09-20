@@ -10,6 +10,5 @@ namespace Maui.SqliteTest
 
             this.BindingContext = new MainViewModel();
         }
-
     }
 }

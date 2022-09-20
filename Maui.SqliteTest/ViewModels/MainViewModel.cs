@@ -110,22 +110,16 @@ namespace Maui.SqliteTest.ViewModels
         public ICommand DeleteCommand => new Command(p => OnDeleteCommand());
         #endregion
 
+        // Constructor
+        #region MainViewModel
         public MainViewModel()
         {
             GetStudentList();
         }
+        #endregion
 
-        private void OnChangeSelectStudentCommand(StudentModel studentModel)
-        {
-            this.IsUpdate = true;
-
-            if (this.SelectStudent != null)
-            {
-                this.Name = this.SelectStudent.Name;
-                this.Age = this.SelectStudent.Age;
-            }
-        }
-
+        // Command Methods
+        #region OnSaveCommand
         private async void OnSaveCommand()
         {
             if (this.IsUpdate)
@@ -155,7 +149,8 @@ namespace Maui.SqliteTest.ViewModels
 
             GetStudentList();
         }
-
+        #endregion
+        #region OnDeleteCommand
         private async void OnDeleteCommand()
         {
             foreach (var student in this.Students)
@@ -163,9 +158,29 @@ namespace Maui.SqliteTest.ViewModels
                 await studentHelper.DeleteStudent(student);
             }
 
+            this.IsUpdate = false;
+
+            this.Name = "";
+            this.Age = "";
+
             GetStudentList();
         }
+        #endregion
+        #region OnChangeSelectStudentCommand
+        private void OnChangeSelectStudentCommand(StudentModel studentModel)
+        {
+            this.IsUpdate = true;
 
+            if (this.SelectStudent != null)
+            {
+                this.Name = this.SelectStudent.Name;
+                this.Age = this.SelectStudent.Age;
+            }
+        }
+        #endregion
+
+        // Methods
+        #region GetStudentList
         private async void GetStudentList()
         {
             var students = await studentHelper.GetStudentList();
@@ -180,5 +195,6 @@ namespace Maui.SqliteTest.ViewModels
                 }
             }
         }
+        #endregion
     }
 }

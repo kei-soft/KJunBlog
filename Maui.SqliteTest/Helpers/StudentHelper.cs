@@ -14,6 +14,8 @@ namespace Maui.SqliteTest.Helpers
             {
                 string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Student.db3");
                 this.dbConnection = new SQLiteAsyncConnection(dbPath);
+
+                // Create Table
                 await this.dbConnection.CreateTableAsync<StudentModel>();
             }
         }
