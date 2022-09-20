@@ -3,6 +3,7 @@
     x:Class="Maui.SqliteTest.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    
     <ContentPage.Resources>
         <Style TargetType="Grid">
             <Setter Property="VisualStateManager.VisualStateGroups">
@@ -19,6 +20,7 @@
             </Setter>
         </Style>
     </ContentPage.Resources>
+    
     <Grid
         Padding="15,15"
         RowDefinitions=" 50,50,50,*,50"
@@ -34,7 +36,7 @@
                 Grid.Column="1"
                 BackgroundColor="LightGray"
                 HorizontalTextAlignment="Center"
-                Text="{Binding NewName, Mode=TwoWay}"
+                Text="{Binding Name, Mode=TwoWay}"
                 VerticalOptions="Center"
                 VerticalTextAlignment="Center" />
         </Grid>
@@ -50,7 +52,7 @@
                 BackgroundColor="LightGray"
                 HorizontalTextAlignment="Center"
                 Keyboard="Numeric"
-                Text="{Binding NewAge, Mode=TwoWay}"
+                Text="{Binding Age, Mode=TwoWay}"
                 VerticalOptions="Center"
                 VerticalTextAlignment="Center" />
         </Grid>
@@ -95,9 +97,6 @@
                             Margin="5"
                             Padding="10"
                             ColumnDefinitions="100,*">
-                            <!--<Grid.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ChangeSelectStudentCommand}" />
-                        </Grid.GestureRecognizers>-->
                             <Label
                                 Grid.Column="0"
                                 FontAttributes="Bold"

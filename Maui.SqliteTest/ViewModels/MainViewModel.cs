@@ -38,32 +38,32 @@ namespace Maui.SqliteTest.ViewModels
             }
         }
 
-        private string newName;
+        private string name;
 
-        public string NewName
+        public string Name
         {
             get
             {
-                return this.newName;
+                return this.name;
             }
             set
             {
-                this.newName = value;
+                this.name = value;
                 OnPropertyChanged();
             }
         }
 
-        private string newAge;
+        private string age;
 
-        public string NewAge
+        public string Age
         {
             get
             {
-                return this.newAge;
+                return this.age;
             }
             set
             {
-                this.newAge = value;
+                this.age = value;
                 OnPropertyChanged();
             }
         }
@@ -119,16 +119,19 @@ namespace Maui.SqliteTest.ViewModels
         {
             this.IsUpdate = true;
 
-            this.NewName = this.SelectStudent.Name;
-            this.NewAge = this.SelectStudent.Age;
+            if (this.SelectStudent != null)
+            {
+                this.Name = this.SelectStudent.Name;
+                this.Age = this.SelectStudent.Age;
+            }
         }
 
         private async void OnSaveCommand()
         {
             if (this.IsUpdate)
             {
-                this.SelectStudent.Name = this.NewName;
-                this.SelectStudent.Age = this.NewAge;
+                this.SelectStudent.Name = this.Name;
+                this.SelectStudent.Age = this.Age;
 
                 int i = await studentHelper.UpdateStudent(this.SelectStudent);
 
@@ -139,16 +142,16 @@ namespace Maui.SqliteTest.ViewModels
             else
             {
                 StudentModel newStudent = new StudentModel();
-                newStudent.Name = this.newName;
-                newStudent.Age = this.newAge;
+                newStudent.Name = this.name;
+                newStudent.Age = this.age;
 
                 int i = await studentHelper.AddStudent(newStudent);
 
                 await Application.Current.MainPage.DisplayAlert("Save", "Save Complete", "ok");
             }
 
-            this.NewName = "";
-            this.NewAge = "";
+            this.Name = "";
+            this.Age = "";
 
             GetStudentList();
         }
