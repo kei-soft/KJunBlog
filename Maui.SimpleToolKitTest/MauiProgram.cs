@@ -10,7 +10,7 @@ namespace Maui.SimpleToolKitTest
             builder
                 .UseMauiApp<App>()
                 .UseSimpleToolkit()
-                //.DisplayContentBehindBars()
+                .DisplayContentBehindBars()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -18,12 +18,12 @@ namespace Maui.SimpleToolKitTest
                 });
 
 
-            //#if ANDROID
+#if ANDROID
 
-            //            builder.SetDefaultStatusBarAppearance(color: Color.FromRgb(26, 129, 197), lightElements: false);
-            //            builder.SetDefaultNavigationBarAppearance(color: Colors.White, lightElements: false);
+            builder.SetDefaultStatusBarAppearance(color: Color.FromRgb(26, 129, 197), lightElements: false);
+            builder.SetDefaultNavigationBarAppearance(color: Colors.White, lightElements: false);
 
-            //#endif
+#endif
 
             return builder.Build();
         }
