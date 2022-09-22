@@ -10,6 +10,9 @@ namespace Maui.ToolKitMaui
         public MainPage()
         {
             InitializeComponent();
+
+            this.statusBar.StatusBarColor = Colors.White;
+            this.statusBar.StatusBarStyle = StatusBarStyle.DarkContent;
         }
 
         private void snackbarButton_Clicked(object sender, EventArgs e)
@@ -42,6 +45,12 @@ namespace Maui.ToolKitMaui
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
             Toast.Make("This is a Toast", ToastDuration.Short, 14).Show(cancellationTokenSource.Token);
+        }
+
+        private void ChangeStatusBarColorButton_Clicked(object sender, EventArgs e)
+        {
+            this.statusBar.StatusBarColor = Color.FromRgb(63, 81, 181);
+            this.statusBar.StatusBarStyle = StatusBarStyle.LightContent;
         }
     }
 }
