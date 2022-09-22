@@ -4,7 +4,10 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Dynamic;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 using System.Windows.Media;
+
+using DevExpress.Mvvm;
 
 namespace Wpf.DevGridTest
 {
@@ -30,6 +33,42 @@ namespace Wpf.DevGridTest
             set
             {
                 this.items = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        private ObservableCollection<ItemModel> selectItems;
+
+        public ObservableCollection<ItemModel> SelectItems
+        {
+            get
+            {
+                if (this.selectItems == null)
+                {
+                    this.selectItems = new ObservableCollection<ItemModel>();
+                }
+
+                return this.selectItems;
+            }
+            set
+            {
+                this.selectItems = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ItemModel currentItem;
+
+        public ItemModel CurrentItem
+        {
+            get
+            {
+                return this.currentItem;
+            }
+            set
+            {
+                this.currentItem = value;
                 OnPropertyChanged();
             }
         }
@@ -78,6 +117,25 @@ namespace Wpf.DevGridTest
             }
         }
 
+
+        /// <summary>
+        /// 새 리드그룹 추가 커맨드
+        /// </summary>
+        public ICommand CurrentChangedCommand
+        {
+            get
+            {
+                if (currentChangedCommand == null)
+                {
+                    currentChangedCommand = new DelegateCommand<ItemModel>((p) => OnCurrentChangedCommand(p));
+                }
+                return currentChangedCommand;
+            }
+        }
+
+
+        private IDelegateCommand currentChangedCommand;
+
         public MainViewModel()
         {
             // Cell Color
@@ -102,6 +160,18 @@ namespace Wpf.DevGridTest
                 AddProperty(expando, "Name", data.NAME);
 
                 Dynamicitems.Add(expando);
+            }
+        }
+
+        private void OnCurrentChangedCommand(ItemModel changeItem)
+        {
+            if (SelectItems.Contains(changeItem))
+            {
+                SelectItems.Remove(changeItem);
+            }
+            else
+            {
+                SelectItems.Add(changeItem);
             }
         }
 

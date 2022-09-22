@@ -5,11 +5,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
     xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:local="clr-namespace:Wpf.DevGridTest"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
     Width="800"
-    Height="650"
+    Height="800"
     mc:Ignorable="d">
     <Window.Resources>
         <Style x:Key="FocusedCellStyle" TargetType="dxg:LightweightCellEditor">
@@ -37,6 +38,7 @@
             <RowDefinition Height="60" />
             <RowDefinition Height="60" />
             <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
@@ -149,9 +151,11 @@
             <dxg:GridControl.View>
                 <dxg:TableView
                     CellStyle="{StaticResource FocusedCellStyle}"
+                    CheckBoxSelectorColumnWidth="100"
                     RowStyle="{StaticResource FocusedRowStyle}"
-                    ShowGroupPanel="False"
-                    ShowGridMenu="TableView_ShowGridMenu"/>
+                    ShowCheckBoxSelectorColumn="True"
+                    ShowGridMenu="TableView_ShowGridMenu"
+                    ShowGroupPanel="False" />
             </dxg:GridControl.View>
         </dxg:GridControl>
         <dxg:GridControl
@@ -169,5 +173,41 @@
                     ShowGroupPanel="False" />
             </dxg:GridControl.View>
         </dxg:GridControl>
+
+        <dxg:GridControl
+            x:Name="griControl"
+            Grid.Row="5"
+            Height="300"
+            AutoGenerateColumns="RemoveOld"
+            CurrentItem="{Binding CurrentItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            ItemsSource="{Binding Items}"
+            SelectedItems="{Binding SelectItems, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            SelectionMode="Row">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction Command="{Binding CurrentChangedCommand}" CommandParameter="{Binding ElementName=griControl, Path=CurrentItem}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+
+            <dxg:GridColumn
+                FieldName="Name"
+                Header="NAME"
+                HorizontalHeaderContentAlignment="Center" />
+            <dxg:GridColumn
+                FieldName="Age"
+                Header="AGE"
+                HorizontalHeaderContentAlignment="Center" />
+            <dxg:GridControl.View>
+                <dxg:TableView
+                    AllowEditing="False"
+                    CanSelectCell="TableView_CanSelectCell"
+                    HeaderHorizontalAlignment="Center"
+                    NavigationStyle="Row"
+                    ShowCheckBoxSelectorColumn="True"
+                    ShowGroupPanel="False" />
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+
+
     </Grid>
 </Window>
