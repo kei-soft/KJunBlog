@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+    xmlns:animations="clr-namespace:Maui.ToolKitMaui.Animations"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
     <Page.Behaviors>
@@ -100,6 +101,39 @@
             </toolkit:UniformItemsLayout>
 
             <Button Clicked="ChangeStatusBarColorButton_Clicked" Text="Change StatusBar Color" />
+            <Button Text="Animate Button">
+                <Button.Behaviors>
+                    <mct:AnimationBehavior EventName="Clicked">
+                        <mct:AnimationBehavior.AnimationType>
+                            <animations:SampleScaleAnimation 
+                            Easing="{x:Static Easing.Linear}"
+                            Length="100"/>
+                        </mct:AnimationBehavior.AnimationType>
+                    </mct:AnimationBehavior>
+                </Button.Behaviors>
+            </Button>
+
+            <Entry Placeholder="Animate on Focused and Unfocused" Margin="16,0">
+                <Entry.Behaviors>
+                    <mct:AnimationBehavior EventName="Focused">
+                        <mct:AnimationBehavior.AnimationType>
+                            <animations:SampleScaleToAnimation 
+                            Easing="{x:Static Easing.Linear}"
+                            Length="100"
+                            Scale="1.05"/>
+                        </mct:AnimationBehavior.AnimationType>
+                    </mct:AnimationBehavior>
+
+                    <mct:AnimationBehavior EventName="Unfocused">
+                        <mct:AnimationBehavior.AnimationType>
+                            <animations:SampleScaleToAnimation 
+                            Easing="{x:Static Easing.Linear}"
+                            Length="100"
+                            Scale="1"/>
+                        </mct:AnimationBehavior.AnimationType>
+                    </mct:AnimationBehavior>
+                </Entry.Behaviors>
+            </Entry>
         </VerticalStackLayout>
     </ScrollView>
 
