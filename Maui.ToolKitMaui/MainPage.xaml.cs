@@ -11,6 +11,8 @@ namespace Maui.ToolKitMaui
         {
             InitializeComponent();
 
+            this.BindingContext = new MainViewModel();
+
             this.statusBar.StatusBarColor = Colors.White;
             this.statusBar.StatusBarStyle = StatusBarStyle.DarkContent;
         }

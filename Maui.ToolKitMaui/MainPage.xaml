@@ -3,9 +3,8 @@
     x:Class="Maui.ToolKitMaui.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
     xmlns:animations="clr-namespace:Maui.ToolKitMaui.Animations"
-    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
     <Page.Behaviors>
         <mct:StatusBarBehavior x:Name="statusBar" />
@@ -18,25 +17,24 @@
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
-            Spacing="25"
+            Spacing="15"
             VerticalOptions="Center">
+            <!--  Snackbar  -->
             <Button
                 x:Name="snackbarButton"
                 Clicked="snackbarButton_Clicked"
                 HorizontalOptions="Center"
-                IsVisible="false"
                 Text="Show Snackbar" />
+
+            <!--  Toast  -->
             <Button
                 x:Name="toastButton"
                 Clicked="toastButton_Clicked"
                 HorizontalOptions="Center"
-                IsVisible="false"
                 Text="Show Toast" />
-            <toolkit:UniformItemsLayout
+            <mct:UniformItemsLayout
                 Padding="10"
                 HorizontalOptions="Center"
-                IsVisible="false"
-                MaxColumns="2"
                 VerticalOptions="Center">
                 <Image
                     Margin="10"
@@ -98,40 +96,75 @@
                     HeightRequest="{StaticResource ImageSize}"
                     Source="keilogo.png"
                     WidthRequest="{StaticResource ImageSize}" />
-            </toolkit:UniformItemsLayout>
+            </mct:UniformItemsLayout>
 
+            <!--  StatusBar  -->
             <Button Clicked="ChangeStatusBarColorButton_Clicked" Text="Change StatusBar Color" />
-            <Button Text="Animate Button">
+
+            <!--  AnimationBehavior - Scale  -->
+            <Button Text="Animate Scale Button">
                 <Button.Behaviors>
                     <mct:AnimationBehavior EventName="Clicked">
                         <mct:AnimationBehavior.AnimationType>
-                            <animations:SampleScaleAnimation 
-                            Easing="{x:Static Easing.Linear}"
-                            Length="100"/>
+                            <animations:SampleScaleAnimation Easing="{x:Static Easing.Linear}" Length="100" />
                         </mct:AnimationBehavior.AnimationType>
                     </mct:AnimationBehavior>
                 </Button.Behaviors>
             </Button>
 
-            <Entry Placeholder="Animate on Focused and Unfocused" Margin="16,0">
-                <Entry.Behaviors>
-                    <mct:AnimationBehavior EventName="Focused">
+            <!--  AnimationBehavior - Fade  -->
+            <Frame
+                Margin="16,0"
+                Padding="0"
+                BackgroundColor="SkyBlue"
+                HeightRequest="50">
+                <Frame.Behaviors>
+                    <mct:AnimationBehavior Command="{Binding AnimationCommand}">
                         <mct:AnimationBehavior.AnimationType>
-                            <animations:SampleScaleToAnimation 
-                            Easing="{x:Static Easing.Linear}"
-                            Length="100"
-                            Scale="1.05"/>
+                            <mct:FadeAnimation Opacity="0.2" />
                         </mct:AnimationBehavior.AnimationType>
                     </mct:AnimationBehavior>
+                </Frame.Behaviors>
+                <Label
+                    HorizontalOptions="Center"
+                    Text="Fade Frame"
+                    VerticalOptions="Center" />
+            </Frame>
 
-                    <mct:AnimationBehavior EventName="Unfocused">
-                        <mct:AnimationBehavior.AnimationType>
-                            <animations:SampleScaleToAnimation 
-                            Easing="{x:Static Easing.Linear}"
-                            Length="100"
-                            Scale="1"/>
-                        </mct:AnimationBehavior.AnimationType>
-                    </mct:AnimationBehavior>
+            <!--  EmailValidationBehavior  -->
+            <HorizontalStackLayout>
+                <Entry
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Input Email"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center"
+                    WidthRequest="200">
+                    <Entry.Behaviors>
+                        <mct:EmailValidationBehavior
+                            x:Name="EmailValidator"
+                            DecorationFlags="Trim"
+                            Flags="ValidateOnValueChanged" />
+                    </Entry.Behaviors>
+                </Entry>
+                <Label
+                    FontSize="15"
+                    HorizontalOptions="Start"
+                    HorizontalTextAlignment="Start"
+                    IsVisible="{Binding IsNotValid, Source={x:Reference EmailValidator}}"
+                    Text="Invalid Email"
+                    TextColor="Red"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center"
+                    WidthRequest="150" />
+            </HorizontalStackLayout>
+
+            <Entry
+                BackgroundColor="LightGray"
+                Placeholder="Event To Command (Focused)"
+                PlaceholderColor="White"
+                TextColor="Black">
+                <Entry.Behaviors>
+                    <mct:EventToCommandBehavior Command="{Binding EventToCommand}" EventName="Focused" />
                 </Entry.Behaviors>
             </Entry>
         </VerticalStackLayout>
