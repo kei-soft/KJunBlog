@@ -4,6 +4,7 @@
 
 <EditForm Model="@loginUserModel" OnValidSubmit="Submit">
     <DataAnnotationsValidator />
+    <img src="images/kei.png" height="50"/>
     <div class="form-group">
         <label>Email</label>
         <input type="email" @bind-value="loginUserModel.Email" class="form-control" placeholder="Email">
