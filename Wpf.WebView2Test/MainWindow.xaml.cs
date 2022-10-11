@@ -123,7 +123,9 @@ namespace Wpf.WebView2Test
             }
         }
 
-
+        /// <summary>
+        /// WebView2 에 Html Source 를 바인딩합니다.
+        /// </summary>
         private async void BindingHtml()
         {
             string html = "<body><h1>Hello World</h1></body>";

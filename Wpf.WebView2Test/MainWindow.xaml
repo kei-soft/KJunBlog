@@ -17,13 +17,13 @@
         </Grid.ColumnDefinitions>
 
         <wpf:WebView2
-            Grid.Column="0"
+            Grid.Column="1"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Source="https://kjun.kr" />
         <wpf:WebView2
             x:Name="webView2"
-            Grid.Column="1"
+            Grid.Column="0"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch" />
     </Grid>
