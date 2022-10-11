@@ -24,6 +24,8 @@ namespace Wpf.WebView2Test
             {
                 Task.Run(async () => await InstallWebview2RuntimeAsync()).Wait();
             }
+
+            BindingHtml();
         }
 
         /// <summary>
@@ -119,6 +121,15 @@ namespace Wpf.WebView2Test
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+
+        private async void BindingHtml()
+        {
+            string html = "<body><h1>Hello World</h1></body>";
+            await webView2.EnsureCoreWebView2Async();
+
+            webView2.NavigateToString(html);
         }
     }
 }
