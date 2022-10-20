@@ -167,6 +167,18 @@
                     <mct:EventToCommandBehavior Command="{Binding EventToCommand}" EventName="Focused" />
                 </Entry.Behaviors>
             </Entry>
+
+            <!--  ProgressBarAnimationBehavior  -->
+            <ProgressBar
+                HorizontalOptions="FillAndExpand"
+                ScaleY="{OnPlatform Android=2,
+                                    iOS=2}"
+                VerticalOptions="CenterAndExpand">
+                <ProgressBar.Behaviors>
+                    <mct:ProgressBarAnimationBehavior Length="250" Progress="{Binding Progress}" />
+                </ProgressBar.Behaviors>
+            </ProgressBar>
+            <Button Command="{Binding ProgressAnimationCommand}" Text="Animate" />
         </VerticalStackLayout>
     </ScrollView>
 

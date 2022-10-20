@@ -17,6 +17,22 @@ namespace Maui.ToolKitMaui
             this.statusBar.StatusBarStyle = StatusBarStyle.DarkContent;
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            Thread t = new Thread(() =>
+            {
+                Thread.Sleep(500);
+                if (this.BindingContext is MainViewModel mainViewModel)
+                {
+                    mainViewModel.Progress = 0.5;
+                }
+            });
+
+            t.Start();
+        }
+
         private void snackbarButton_Clicked(object sender, EventArgs e)
         {
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
