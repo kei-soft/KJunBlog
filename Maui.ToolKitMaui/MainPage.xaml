@@ -158,6 +158,7 @@
                     WidthRequest="150" />
             </HorizontalStackLayout>
 
+            <!--  EventToCommandBehavior  -->
             <Entry
                 BackgroundColor="LightGray"
                 Placeholder="Event To Command (Focused)"
