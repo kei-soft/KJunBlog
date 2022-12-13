@@ -69,7 +69,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.SimpleToolKitTest", "M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf.WebView2Test", "Wpf.WebView2Test\Wpf.WebView2Test.csproj", "{EE49FCC6-25F7-4BA1-A855-C54F2BCD774E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.ReflectionAnimation", "Wpf.ReflectionAnimation\Wpf.ReflectionAnimation.csproj", "{64DD0ED9-5040-4B5B-A14F-A88CE2B64D8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf.ReflectionAnimation", "Wpf.ReflectionAnimation\Wpf.ReflectionAnimation.csproj", "{64DD0ED9-5040-4B5B-A14F-A88CE2B64D8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.RadialPanelTest", "Wpf.RadialPanelTest\Wpf.RadialPanelTest.csproj", "{82562845-00AC-410C-87CA-ED1C3213619D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -255,6 +257,10 @@ Global
 		{64DD0ED9-5040-4B5B-A14F-A88CE2B64D8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64DD0ED9-5040-4B5B-A14F-A88CE2B64D8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64DD0ED9-5040-4B5B-A14F-A88CE2B64D8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82562845-00AC-410C-87CA-ED1C3213619D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82562845-00AC-410C-87CA-ED1C3213619D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82562845-00AC-410C-87CA-ED1C3213619D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82562845-00AC-410C-87CA-ED1C3213619D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
