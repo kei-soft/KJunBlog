@@ -1,5 +1,8 @@
-﻿using CommunityToolkit.Maui.Alerts;
+﻿using System.Text;
+
+using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Maui.Storage;
 
 using Font = Microsoft.Maui.Font;
 
@@ -7,9 +10,14 @@ namespace Maui.ToolKitMaui
 {
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        IFileSaver fileSaver;
+        CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+
+        public MainPage(IFileSaver fileSaver)
         {
             InitializeComponent();
+
+            this.fileSaver = fileSaver;
 
             this.BindingContext = new MainViewModel();
 
@@ -60,8 +68,6 @@ namespace Maui.ToolKitMaui
 
         private void toastButton_Clicked(object sender, EventArgs e)
         {
-            CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-
             Toast.Make("This is a Toast", ToastDuration.Short, 14).Show(cancellationTokenSource.Token);
         }
 
@@ -69,6 +75,18 @@ namespace Maui.ToolKitMaui
         {
             this.statusBar.StatusBarColor = Color.FromRgb(63, 81, 181);
             this.statusBar.StatusBarStyle = StatusBarStyle.LightContent;
+        }
+
+        private async void fileButton_Clicked(object sender, EventArgs e)
+        {
+            using var stream = new MemoryStream(Encoding.Default.GetBytes(this.saveEntry.Text));
+
+            var savePath = await this.fileSaver.SaveAsync("test.txt", stream, cancellationTokenSource.Token);
+
+            if (savePath.IsSuccessful)
+            {
+                savePathLabel.Text = savePath.FilePath;
+            }
         }
     }
 }

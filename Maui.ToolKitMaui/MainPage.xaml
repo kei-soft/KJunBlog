@@ -4,7 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:animations="clr-namespace:Maui.ToolKitMaui.Animations"
-    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    BackgroundColor="White">
 
     <Page.Behaviors>
         <mct:StatusBarBehavior x:Name="statusBar" />
@@ -180,6 +181,18 @@
                 </ProgressBar.Behaviors>
             </ProgressBar>
             <Button Command="{Binding ProgressAnimationCommand}" Text="Animate" />
+
+            <Entry
+                x:Name="saveEntry"
+                BackgroundColor="LightGray"
+                Text="Save Content"
+                TextColor="Black" />
+            <Button
+                x:Name="fileButton"
+                Clicked="fileButton_Clicked"
+                HorizontalOptions="Center"
+                Text="Save File" />
+            <Label x:Name="savePathLabel" TextColor="Black" />
         </VerticalStackLayout>
     </ScrollView>
 
