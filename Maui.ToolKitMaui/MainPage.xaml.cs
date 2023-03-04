@@ -21,6 +21,8 @@ namespace Maui.ToolKitMaui
 
             this.BindingContext = new MainViewModel();
 
+            CheckPermission();
+
             this.statusBar.StatusBarColor = Colors.White;
             this.statusBar.StatusBarStyle = StatusBarStyle.DarkContent;
         }
@@ -79,6 +81,28 @@ namespace Maui.ToolKitMaui
 
         private async void fileButton_Clicked(object sender, EventArgs e)
         {
+            using var stream = new MemoryStream(Encoding.Default.GetBytes(this.saveEntry.Text));
+
+            var result = await this.fileSaver.SaveAsync("test.txt", stream, cancellationTokenSource.Token);
+
+            if (result.IsSuccessful)
+            {
+                this.savePathLabel.Text = result.FilePath;
+            }
+        }
+
+        private async void pickButton_Clicked(object sender, EventArgs e)
+        {
+            var result = await FolderPicker.PickAsync(cancellationTokenSource.Token);
+
+            if (result.IsSuccessful)
+            {
+                this.pickPathLabel.Text = result.Folder.Path;
+            }
+        }
+
+        private async void CheckPermission()
+        {
             PermissionStatus readStatus = await Permissions.CheckStatusAsync<Permissions.StorageRead>();
 
             if (readStatus != PermissionStatus.Granted)
@@ -114,40 +138,8 @@ namespace Maui.ToolKitMaui
                             await DisplayAlert("Permission Check", "Need Permissions", "OK");
                             return;
                         }
-                        else if (status == PermissionStatus.Granted)
-                        {
-                            using var stream = new MemoryStream(Encoding.Default.GetBytes(this.saveEntry.Text));
-
-                            var result = await this.fileSaver.SaveAsync("test.txt", stream, cancellationTokenSource.Token);
-
-                            if (result.IsSuccessful)
-                            {
-                                this.savePathLabel.Text = result.FilePath;
-                            }
-                        }
                     }
                 }
-            }
-            else
-            {
-                using var stream = new MemoryStream(Encoding.Default.GetBytes(this.saveEntry.Text));
-
-                var result = await this.fileSaver.SaveAsync("test.txt", stream, cancellationTokenSource.Token);
-
-                if (result.IsSuccessful)
-                {
-                    this.savePathLabel.Text = result.FilePath;
-                }
-            }
-        }
-
-        private async void pickButton_Clicked(object sender, EventArgs e)
-        {
-            var result = await FolderPicker.PickAsync(cancellationTokenSource.Token);
-
-            if (result.IsSuccessful)
-            {
-                this.pickPathLabel.Text = result.Folder.Path;
             }
         }
     }
