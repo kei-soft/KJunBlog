@@ -187,12 +187,30 @@
                 BackgroundColor="LightGray"
                 Text="Save Content"
                 TextColor="Black" />
-            <Button
-                x:Name="fileButton"
-                Clicked="fileButton_Clicked"
-                HorizontalOptions="Center"
-                Text="Save File" />
-            <Label x:Name="savePathLabel" TextColor="Black" />
+            <HorizontalStackLayout>
+                <Button
+                    x:Name="fileButton"
+                    Clicked="fileButton_Clicked"
+                    HorizontalOptions="Center"
+                    Text="Save File" />
+                <Label
+                    x:Name="savePathLabel"
+                    Margin="10,0"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Button
+                    x:Name="pickButton"
+                    Clicked="pickButton_Clicked"
+                    HorizontalOptions="Center"
+                    Text="Pick Folder" />
+                <Label
+                    x:Name="pickPathLabel"
+                    Margin="10,0"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+            </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 

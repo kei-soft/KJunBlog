@@ -17,6 +17,7 @@ namespace Maui.ToolKitMaui
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            // FileSaver 주입
             builder.Services.AddSingleton<IFileSaver>(FileSaver.Default);
             builder.Services.AddTransient<MainPage>();
 

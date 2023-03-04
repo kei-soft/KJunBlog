@@ -79,13 +79,75 @@ namespace Maui.ToolKitMaui
 
         private async void fileButton_Clicked(object sender, EventArgs e)
         {
-            using var stream = new MemoryStream(Encoding.Default.GetBytes(this.saveEntry.Text));
+            PermissionStatus readStatus = await Permissions.CheckStatusAsync<Permissions.StorageRead>();
 
-            var savePath = await this.fileSaver.SaveAsync("test.txt", stream, cancellationTokenSource.Token);
-
-            if (savePath.IsSuccessful)
+            if (readStatus != PermissionStatus.Granted)
             {
-                savePathLabel.Text = savePath.FilePath;
+                if (Permissions.ShouldShowRationale<Permissions.StorageRead>())
+                {
+                    await DisplayAlert("Permission", "Need Permissions", "OK");
+                }
+
+                var status = await Permissions.RequestAsync<Permissions.StorageRead>();
+
+                if (status != PermissionStatus.Granted)
+                {
+                    await DisplayAlert("Permission Check", "Need Permissions", "OK");
+                    return;
+                }
+
+                if (readStatus == PermissionStatus.Granted)
+                {
+                    PermissionStatus writeStatus = await Permissions.CheckStatusAsync<Permissions.StorageWrite>();
+
+                    if (writeStatus != PermissionStatus.Granted)
+                    {
+                        if (Permissions.ShouldShowRationale<Permissions.StorageWrite>())
+                        {
+                            await DisplayAlert("Permission", "Need Permissions", "OK");
+                        }
+
+                        status = await Permissions.RequestAsync<Permissions.StorageWrite>();
+
+                        if (status != PermissionStatus.Granted)
+                        {
+                            await DisplayAlert("Permission Check", "Need Permissions", "OK");
+                            return;
+                        }
+                        else if (status == PermissionStatus.Granted)
+                        {
+                            using var stream = new MemoryStream(Encoding.Default.GetBytes(this.saveEntry.Text));
+
+                            var result = await this.fileSaver.SaveAsync("test.txt", stream, cancellationTokenSource.Token);
+
+                            if (result.IsSuccessful)
+                            {
+                                this.savePathLabel.Text = result.FilePath;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                using var stream = new MemoryStream(Encoding.Default.GetBytes(this.saveEntry.Text));
+
+                var result = await this.fileSaver.SaveAsync("test.txt", stream, cancellationTokenSource.Token);
+
+                if (result.IsSuccessful)
+                {
+                    this.savePathLabel.Text = result.FilePath;
+                }
+            }
+        }
+
+        private async void pickButton_Clicked(object sender, EventArgs e)
+        {
+            var result = await FolderPicker.PickAsync(cancellationTokenSource.Token);
+
+            if (result.IsSuccessful)
+            {
+                this.pickPathLabel.Text = result.Folder.Path;
             }
         }
     }
