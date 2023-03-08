@@ -21,6 +21,8 @@ namespace Maui.ToolKitMaui
             builder.Services.AddSingleton<IFileSaver>(FileSaver.Default);
             builder.Services.AddTransient<MainPage>();
 
+            Routing.RegisterRoute("drawpage", typeof(DrawPage));
+
             return builder.Build();
         }
     }
