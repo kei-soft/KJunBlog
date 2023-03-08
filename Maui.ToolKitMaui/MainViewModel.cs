@@ -10,6 +10,11 @@ namespace Maui.ToolKitMaui
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         double progress = 0;
         public double Progress
         {
@@ -22,11 +27,6 @@ namespace Maui.ToolKitMaui
                 this.progress = value;
                 OnPropertyChanged();
             }
-        }
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public ICommand AnimationCommand => new Command(() => OnAnimationCommand());
