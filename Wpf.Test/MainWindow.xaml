@@ -91,5 +91,46 @@
                 </Canvas>
             </StackPanel>
         </Border>
+
+        <BulletDecorator Margin="0,5,0,0">
+            <BulletDecorator.Bullet>
+                <CheckBox />
+            </BulletDecorator.Bullet>
+            <TextBlock
+                Width="100"
+                Margin="5,0,0,0"
+                HorizontalAlignment="Left"
+                Foreground="Blue"
+                TextWrapping="Wrap">
+                A BulletDecorator with a CheckBox Bullet.
+            </TextBlock>
+        </BulletDecorator>
+        <BulletDecorator Margin="0,5,0,0">
+            <BulletDecorator.Bullet>
+                <TextBox Width="30" />
+            </BulletDecorator.Bullet>
+            <TextBlock
+                Width="100"
+                Margin="5,0,0,0"
+                HorizontalAlignment="Left"
+                Foreground="Blue"
+                TextWrapping="Wrap">
+                A BulletDecorator with a TextBox Bullet.
+            </TextBlock>
+        </BulletDecorator>
+        <BulletDecorator Margin="0,5,0,0">
+            <BulletDecorator.Bullet>
+                <RadioButton />
+            </BulletDecorator.Bullet>
+            <TextBlock
+                Width="100"
+                Margin="5,0,0,0"
+                HorizontalAlignment="Left"
+                Foreground="Blue"
+                TextWrapping="Wrap">
+                A BulletDecorator with a RadioButton Bullet
+            </TextBlock>
+        </BulletDecorator>
+
     </StackPanel>
 </Window>
