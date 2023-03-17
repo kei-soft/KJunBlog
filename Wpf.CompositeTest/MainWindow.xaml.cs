@@ -30,7 +30,7 @@ namespace Wpf.CompositeTest
 
             this.compositeCollection.Add(new CollectionContainer() { Collection = inboundMessages });
             this.compositeCollection.Add(new CollectionContainer() { Collection = outboundMessages });
-            ;
+
             this.compositeCollection.Add(new InboundMessage { MessageId = 1, Message = "7시", ReceivedTime = new DateTime(2023, 12, 10, 12, 53, 02).ToString("yyyy-MM-dd HH:mm:ss") });
             this.compositeCollection.Add(new OutboundMessage { MessageId = 1, Message = "ㅇㅇ", SentTime = new DateTime(2023, 12, 10, 12, 54, 55).ToString("yyyy-MM-dd HH:mm:ss") });
 
