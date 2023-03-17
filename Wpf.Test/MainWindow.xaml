@@ -61,5 +61,35 @@
                 </TextBlock.Text>
             </TextBlock>
         </StackPanel>
+
+        <Border
+            Margin="10"
+            Padding="8"
+            BorderBrush="Silver"
+            BorderThickness="3">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        TextAlignment="Center">
+                        Choose a Color:
+                    </TextBlock>
+                    <ComboBox
+                        Name="myComboBox"
+                        Margin="3"
+                        SelectedIndex="0">
+                        <ComboBoxItem>Green</ComboBoxItem>
+                        <ComboBoxItem>Blue</ComboBoxItem>
+                        <ComboBoxItem>Red</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <Canvas Height="100" Margin="10">
+                    <Canvas.Background>
+                        <Binding ElementName="myComboBox" Path="SelectedItem.Content" />
+                    </Canvas.Background>
+                </Canvas>
+            </StackPanel>
+        </Border>
     </StackPanel>
 </Window>
