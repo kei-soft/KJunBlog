@@ -1,0 +1,38 @@
+﻿<Window
+    x:Class="Wpf.CompositeTest.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Wpf.CompositeTest.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Wpf.CompositeTest"
+    xmlns:localmodel="clr-namespace:Wpf.CompositeTest.Models"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="500"
+    Height="850"
+    mc:Ignorable="d">
+    <Grid>
+        <ScrollViewer Background="CadetBlue" VerticalScrollBarVisibility="Auto">
+            <ItemsControl Name="conversationList">
+                <ItemsControl.Resources>
+                    <DataTemplate DataType="{x:Type localmodel:InboundMessage}">
+                        <controls:InboundMessageBubble
+                            Margin="0,0,100,0"
+                            HorizontalAlignment="Left"
+                            InboundMessageBubbleFontSize="24"
+                            TextMessage="{Binding Message}"
+                            TimeStamp="{Binding ReceivedTime}" />
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type localmodel:OutboundMessage}">
+                        <controls:OutboundMessageBubble
+                            Margin="100,0,0,0"
+                            HorizontalAlignment="Right"
+                            OutboundMessageBubbleFontSize="24"
+                            TextMessage="{Binding Message}"
+                            TimeStamp="{Binding SentTime}" />
+                    </DataTemplate>
+                </ItemsControl.Resources>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Window>
