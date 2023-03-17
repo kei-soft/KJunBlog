@@ -17,22 +17,29 @@
 
     <ScrollView>
         <VerticalStackLayout
-            Padding="30,0"
+            Padding="10,0"
             Spacing="15"
             VerticalOptions="Center">
-            <!--  Snackbar  -->
-            <Button
-                x:Name="snackbarButton"
-                Clicked="snackbarButton_Clicked"
-                HorizontalOptions="Center"
-                Text="Show Snackbar" />
 
-            <!--  Toast  -->
-            <Button
-                x:Name="toastButton"
-                Clicked="toastButton_Clicked"
-                HorizontalOptions="Center"
-                Text="Show Toast" />
+            <HorizontalStackLayout>
+                <!--  Snackbar  -->
+                <Button
+                    x:Name="snackbarButton"
+                    Margin="3"
+                    Clicked="snackbarButton_Clicked"
+                    HorizontalOptions="Center"
+                    Text="Show Snackbar" />
+
+                <!--  Toast  -->
+                <Button
+                    x:Name="toastButton"
+                    Margin="3"
+                    Clicked="toastButton_Clicked"
+                    HorizontalOptions="Center"
+                    Text="Show Toast" />
+            </HorizontalStackLayout>
+
+            <!--  UniformItemsLayout  -->
             <mct:UniformItemsLayout
                 Padding="10"
                 HorizontalOptions="Center"
@@ -102,35 +109,38 @@
             <!--  StatusBar  -->
             <Button Clicked="ChangeStatusBarColorButton_Clicked" Text="Change StatusBar Color" />
 
-            <!--  AnimationBehavior - Scale  -->
-            <Button Text="Animate Scale Button">
-                <Button.Behaviors>
-                    <mct:AnimationBehavior EventName="Clicked">
-                        <mct:AnimationBehavior.AnimationType>
-                            <animations:SampleScaleAnimation Easing="{x:Static Easing.Linear}" Length="100" />
-                        </mct:AnimationBehavior.AnimationType>
-                    </mct:AnimationBehavior>
-                </Button.Behaviors>
-            </Button>
+            <HorizontalStackLayout>
+                <!--  AnimationBehavior - Scale  -->
+                <Button Text="Animate Scale Button">
+                    <Button.Behaviors>
+                        <mct:AnimationBehavior EventName="Clicked">
+                            <mct:AnimationBehavior.AnimationType>
+                                <animations:SampleScaleAnimation Easing="{x:Static Easing.Linear}" Length="100" />
+                            </mct:AnimationBehavior.AnimationType>
+                        </mct:AnimationBehavior>
+                    </Button.Behaviors>
+                </Button>
 
-            <!--  AnimationBehavior - Fade  -->
-            <Frame
-                Margin="16,0"
-                Padding="0"
-                BackgroundColor="SkyBlue"
-                HeightRequest="50">
-                <Frame.Behaviors>
-                    <mct:AnimationBehavior Command="{Binding AnimationCommand}">
-                        <mct:AnimationBehavior.AnimationType>
-                            <mct:FadeAnimation Opacity="0.2" />
-                        </mct:AnimationBehavior.AnimationType>
-                    </mct:AnimationBehavior>
-                </Frame.Behaviors>
-                <Label
-                    HorizontalOptions="Center"
-                    Text="Fade Frame"
-                    VerticalOptions="Center" />
-            </Frame>
+                <!--  AnimationBehavior - Fade  -->
+                <Frame
+                    Margin="16,0"
+                    Padding="0"
+                    BackgroundColor="SkyBlue"
+                    HeightRequest="50"
+                    WidthRequest="110">
+                    <Frame.Behaviors>
+                        <mct:AnimationBehavior Command="{Binding AnimationCommand}">
+                            <mct:AnimationBehavior.AnimationType>
+                                <mct:FadeAnimation Opacity="0.2" />
+                            </mct:AnimationBehavior.AnimationType>
+                        </mct:AnimationBehavior>
+                    </Frame.Behaviors>
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="Fade Frame"
+                        VerticalOptions="Center" />
+                </Frame>
+            </HorizontalStackLayout>
 
             <!--  EmailValidationBehavior  -->
             <HorizontalStackLayout>
@@ -170,17 +180,23 @@
                 </Entry.Behaviors>
             </Entry>
 
-            <!--  ProgressBarAnimationBehavior  -->
-            <ProgressBar
-                HorizontalOptions="FillAndExpand"
-                ScaleY="{OnPlatform Android=2,
-                                    iOS=2}"
-                VerticalOptions="CenterAndExpand">
-                <ProgressBar.Behaviors>
-                    <mct:ProgressBarAnimationBehavior Length="250" Progress="{Binding Progress}" />
-                </ProgressBar.Behaviors>
-            </ProgressBar>
-            <Button Command="{Binding ProgressAnimationCommand}" Text="Animate" />
+            <HorizontalStackLayout>
+                <!--  ProgressBarAnimationBehavior  -->
+                <ProgressBar
+                    HorizontalOptions="FillAndExpand"
+                    ScaleY="{OnPlatform Android=2,
+                                        iOS=2}"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="200">
+                    <ProgressBar.Behaviors>
+                        <mct:ProgressBarAnimationBehavior Length="250" Progress="{Binding Progress}" />
+                    </ProgressBar.Behaviors>
+                </ProgressBar>
+                <Button
+                    Margin="5"
+                    Command="{Binding ProgressAnimationCommand}"
+                    Text="Animate" />
+            </HorizontalStackLayout>
 
             <Entry
                 x:Name="saveEntry"
@@ -211,6 +227,11 @@
                     TextColor="Black"
                     VerticalTextAlignment="Center" />
             </HorizontalStackLayout>
+
+            <Button
+                Margin="5"
+                Command="{Binding DrawPageCommand}"
+                Text="Drawing" />
         </VerticalStackLayout>
     </ScrollView>
 

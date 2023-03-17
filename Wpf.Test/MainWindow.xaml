@@ -9,14 +9,57 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
+    <Window.Resources>
+        <local:AsyncSampleData
+            x:Key="AsyncData"
+            FastValue="검사중..(Fast Value)"
+            SlowerValue="결과 산출중..(Slower Value)"
+            SlowestValue="결과(합격!) (Slowest Value)" />
+    </Window.Resources>
+
     <StackPanel>
-        <Label Content="TEST_UNDERBAR" />
-        <Label Content="TEST_UNDERBAR">
+        <TextBlock
+            Margin="10"
+            HorizontalAlignment="Center"
+            FontSize="18"
+            FontWeight="Bold">
+            Underbar Test
+        </TextBlock>
+
+        <Label HorizontalAlignment="Center" Content="TEST_UNDERBAR" />
+        <Label HorizontalAlignment="Center" Content="TEST_UNDERBAR">
             <Label.Template>
                 <ControlTemplate TargetType="Label">
                     <ContentPresenter RecognizesAccessKey="False" />
                 </ControlTemplate>
             </Label.Template>
         </Label>
+
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            DataContext="{Binding Source={StaticResource AsyncData}}">
+            <TextBlock
+                Margin="10"
+                HorizontalAlignment="Center"
+                FontSize="18"
+                FontWeight="Bold">
+                Priority Binding
+            </TextBlock>
+            <TextBlock
+                Width="200"
+                HorizontalAlignment="Center"
+                Background="LightGray"
+                FontWeight="Bold"
+                TextAlignment="Center">
+                <TextBlock.Text>
+                    <PriorityBinding FallbackValue="Default Value">
+                        <Binding IsAsync="True" Path="SlowestValue" />
+                        <Binding IsAsync="True" Path="SlowerValue" />
+                        <Binding Path="FastValue" />
+                    </PriorityBinding>
+                </TextBlock.Text>
+            </TextBlock>
+        </StackPanel>
     </StackPanel>
 </Window>
