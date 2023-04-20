@@ -73,7 +73,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf.ReflectionAnimation", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf.RadialPanelTest", "Wpf.RadialPanelTest\Wpf.RadialPanelTest.csproj", "{82562845-00AC-410C-87CA-ED1C3213619D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.CompositeTest", "Wpf.CompositeTest\Wpf.CompositeTest.csproj", "{A3D5D5CF-425F-4D09-A874-2C78CF7B4DF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf.CompositeTest", "Wpf.CompositeTest\Wpf.CompositeTest.csproj", "{A3D5D5CF-425F-4D09-A874-2C78CF7B4DF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.ParentBindingTest", "Wpf.ParentBindingTest\Wpf.ParentBindingTest.csproj", "{2143D3AF-B2C6-48D2-AF87-AD14195D25E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -267,6 +269,10 @@ Global
 		{A3D5D5CF-425F-4D09-A874-2C78CF7B4DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3D5D5CF-425F-4D09-A874-2C78CF7B4DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3D5D5CF-425F-4D09-A874-2C78CF7B4DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2143D3AF-B2C6-48D2-AF87-AD14195D25E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2143D3AF-B2C6-48D2-AF87-AD14195D25E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2143D3AF-B2C6-48D2-AF87-AD14195D25E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2143D3AF-B2C6-48D2-AF87-AD14195D25E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
